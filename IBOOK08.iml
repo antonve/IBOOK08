@@ -6,7 +6,9 @@
         <dependencies target-player="10.2">
           <sdk name="flex_sdk_4.6" />
         </dependencies>
-        <compiler-options />
+        <compiler-options>
+          <option name="additionalOptions" value="-frame=start,be.devine.cp3.ibook.Application" />
+        </compiler-options>
         <packaging-air-desktop package-file-name="Main" />
         <packaging-android />
         <packaging-ios />
