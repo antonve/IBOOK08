@@ -3,8 +3,21 @@ package {
 import flash.display.Sprite;
 
 public class Main extends Sprite {
-    public function Main() {
-        trace('hello');
+
+    // -- Properties -- //
+
+    // -- Constructor -- //
+
+    public function Main()
+    {
+        trace('[Main] CONTSRUCT');
+
+
     }
+
+    // -- Methods -- //
+
+    // -- Getters & Setters -- //
+
 }
 }
