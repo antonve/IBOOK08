@@ -19,8 +19,6 @@ import starling.core.Starling;
 public class Main extends MovieClip {
 
     // -- Properties -- //
-
-    private var app:DisplayObject;
     private var _starling:Starling;
 
     // -- Constructor -- //
