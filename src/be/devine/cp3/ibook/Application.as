@@ -1,8 +1,8 @@
 package be.devine.cp3.ibook {
 
+import starling.display.Sprite;
+import starling.core.Starling;
 import be.devine.cp3.ibook.model.AppModel;
-
-import flash.display.Sprite;
 
 public class Application extends Sprite {
 
