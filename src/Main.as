@@ -1,5 +1,7 @@
 package {
 
+import be.devine.cp3.ibook.Application;
+
 import flash.display.DisplayObject;
 import flash.display.MovieClip;
 import flash.display.Screen;
@@ -10,11 +12,16 @@ import flash.events.ProgressEvent;
 import flash.geom.Rectangle;
 import flash.utils.getDefinitionByName;
 
+import net.hires.debug.Stats;
+
+import starling.core.Starling;
+[SWF (frameRate="60")]
 public class Main extends MovieClip {
 
     // -- Properties -- //
 
     private var app:DisplayObject;
+    private var _starling:Starling;
 
     // -- Constructor -- //
 
@@ -33,41 +40,14 @@ public class Main extends MovieClip {
                 768
         );
 
-        // Preloader check:
-        if(loaderInfo.bytesLoaded == loaderInfo.bytesTotal) {
-            completeHandler(null);
-        } else {
-            loaderInfo.addEventListener(ProgressEvent.PROGRESS, progressHandler);
-            loaderInfo.addEventListener(Event.COMPLETE, completeHandler);
-        }
+        _starling = new Starling(Application, stage);
+        _starling.start();
+
+        addChild(new Stats());
     }
 
     // -- Methods -- //
 
-    // Fabian (22/11) - Function Preloader //
-    private function progressHandler(event:ProgressEvent):void
-    {
-        var p:Number = event.bytesLoaded / event.bytesTotal;
-        // Trace progress in console:
-        trace("[Main] Progress" + p);
-    }
-
-    // Fabian (22/11) - Function Preloader //
-    private function completeHandler(event:Event):void
-    {
-        trace('[Main] Loading complete');
-        showApplication();
-    }
-
-    // Fabian (22/11) - Function Preloader //
-    private function showApplication():void
-    {
-        this.gotoAndStop(2);
-
-        var appClass:* = getDefinitionByName("be.devine.cp3.ibook.Application");
-        app = new appClass();
-        addChild(app);
-    }
 
     // -- Getters & Setters -- //
 
