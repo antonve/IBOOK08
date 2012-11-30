@@ -46,14 +46,14 @@ public class AppModel extends EventDispatcher {
     // Fabian (30/11) - Function Request Queue //
     public function loadPagesXML():void
     {
-        queue = new RequestQueue();
+        _queue = new RequestQueue();
 
         // Load XML using Queue:
         var xmlTask:XMLTask = new XMLTask("assets/data.xml");
         xmlTask.addEventListener(Event.COMPLETE, xmlCompleteHandler);
-        queue.add(xmlTask);
+        _queue.add(xmlTask);
 
-        queue.start();
+        _queue.start();
     }
 
     // Fabian (30/11) - XML Loaded //
