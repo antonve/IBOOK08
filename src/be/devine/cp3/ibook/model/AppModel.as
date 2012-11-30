@@ -20,7 +20,7 @@ public class AppModel extends EventDispatcher {
     private var _selectedPageIndex:int;
     private var _pages:Vector.<String>;
 
-    private var queue:RequestQueue;
+    private var _queue:RequestQueue;
 
     // -- Singleton -- //
 
