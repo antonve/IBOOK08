@@ -15,7 +15,7 @@ import flash.utils.getDefinitionByName;
 import net.hires.debug.Stats;
 
 import starling.core.Starling;
-
+[SWF (frameRate="60")]
 public class Main extends MovieClip {
 
     // -- Properties -- //
