@@ -1,6 +1,8 @@
 package be.devine.cp3.ibook {
 
-import flash.display.Sprite;
+import starling.display.Sprite;
+
+import starling.core.Starling;
 
 public class Application extends Sprite {
 
@@ -10,7 +12,6 @@ public class Application extends Sprite {
 
     public function Application()
     {
-        trace('[Application] CONTSRUCT');
     }
 
     // -- Methods -- //
