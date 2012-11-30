@@ -1,5 +1,10 @@
 package be.devine.cp3.ibook.model {
 
+import be.devine.cp3.ibook.view.vo.PageVo;
+
+import cp3.requestQueue.RequestQueue;
+import cp3.requestQueue.XMLTask;
+
 import flash.events.Event;
 import flash.events.EventDispatcher;
 
@@ -14,6 +19,8 @@ public class AppModel extends EventDispatcher {
 
     private var _selectedPageIndex:int;
     private var _pages:Vector.<String>;
+
+    private var queue:RequestQueue;
 
     // -- Singleton -- //
 
@@ -35,6 +42,37 @@ public class AppModel extends EventDispatcher {
 
 
     // -- Methods -- //
+
+    // Fabian (30/11) - Function Request Queue //
+    public function loadPagesXML():void
+    {
+        queue = new RequestQueue();
+
+        // Load XML using Queue:
+        var xmlTask:XMLTask = new XMLTask("assets/data.xml");
+        xmlTask.addEventListener(Event.COMPLETE, xmlCompleteHandler);
+        queue.add(xmlTask);
+
+        queue.start();
+    }
+
+    // Fabian (30/11) - XML Loaded //
+    private function xmlCompleteHandler(event:Event):void
+    {
+        trace('[AppModel] XML Loaded');
+
+        var pagesXML = new XML(event.target.data);
+        var pages:Array = [];
+        for each(var page:Object in pagesXML.page) {
+            var pageVo:PageVo = new PageVo();
+            pageVo.title = page.title;
+            pageVo.content = page.content;
+            pageVo.background = page.background;
+            pages.push(pageVo);
+        }
+        //this.pages = pages;
+        //this.currentPage = pages[0];
+    }
 
     // Fabian (23/11) - Function Previous Page //
     public function goToPreviousPage():void
