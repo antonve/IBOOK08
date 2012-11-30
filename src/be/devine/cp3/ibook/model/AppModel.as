@@ -10,15 +10,29 @@ public class AppModel extends EventDispatcher {
     public static const SELECTED_PAGE_CHANGED:String = "selectedPageChanged";
     public static const PAGES_CHANGED:String = "pagesChanged";
 
+    private static var instance;
+
     private var _selectedPageIndex:int;
     private var _pages:Vector.<String>;
 
-    // -- Constructor -- //
+    // -- Singleton -- //
 
-    public function AppModel()
+    public function AppModel(e:Enforcer)
     {
-        trace('[AppModel] CONTSRUCT');
+        if (e == null) {
+            throw new Error('AppModel is a singleton.');
+        }
     }
+
+    public static function getInstance()
+    {
+        if (instance == null) {
+            instance = new AppModel(new Enforcer());
+        }
+
+        return instance;
+    }
+
 
     // -- Methods -- //
 
@@ -68,3 +82,5 @@ public class AppModel extends EventDispatcher {
 
 }
 }
+
+internal class Enforcer{};
