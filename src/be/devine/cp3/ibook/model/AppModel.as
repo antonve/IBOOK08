@@ -1,6 +1,6 @@
 package be.devine.cp3.ibook.model {
 
-import be.devine.cp3.ibook.view.vo.PageVo;
+import be.devine.cp3.ibook.view.vo.PageVO;
 
 import cp3.requestQueue.RequestQueue;
 import cp3.requestQueue.XMLTask;
@@ -64,7 +64,7 @@ public class AppModel extends EventDispatcher {
         var pagesXML = new XML(event.target.data);
         var pages:Array = [];
         for each(var page:Object in pagesXML.page) {
-            var pageVo:PageVo = new PageVo();
+            var pageVo:PageVO = new PageVO();
             pageVo.title = page.title;
             pageVo.content = page.content;
             pageVo.background = page.background;

@@ -1,7 +1,7 @@
 package be.devine.cp3.ibook.view.vo {
 import flash.display.DisplayObject;
 
-public class PageVo {
+public class PageVO {
 
     // -- Properties -- //
 
@@ -12,7 +12,7 @@ public class PageVo {
 
     // -- Constructor -- //
 
-    public function PageVo()
+    public function PageVO()
     {
 
     }
