@@ -13,13 +13,17 @@ public class TextVO
     private var _text:String;
     private var _x:Number;
     private var _y:Number;
+    private var _width:uint;
+    private var _height:uint;
 
     // methods
-    public function TextVO(text:String, x:Number, y:Number)
+    public function TextVO(text:String, x:Number, y:Number, width:uint, height:uint)
     {
         _text = text;
         _x = x;
         _y = y;
+        _width = width;
+        _height = height;
     }
 
     // getter & setters
@@ -51,6 +55,26 @@ public class TextVO
     public function set y(value:Number):void
     {
         _y = value;
+    }
+
+    public function get width():uint
+    {
+        return _width;
+    }
+
+    public function set width(value:uint):void
+    {
+        _width = value;
+    }
+
+    public function get height():uint
+    {
+        return _height;
+    }
+
+    public function set height(value:uint):void
+    {
+        _height = value;
     }
 }
 }
