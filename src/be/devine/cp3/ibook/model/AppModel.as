@@ -1,6 +1,6 @@
 package be.devine.cp3.ibook.model {
 
-import be.devine.cp3.ibook.view.vo.PageVO;
+import be.devine.cp3.ibook.vo.PageVO;
 
 import cp3.requestQueue.RequestQueue;
 import cp3.requestQueue.XMLTask;

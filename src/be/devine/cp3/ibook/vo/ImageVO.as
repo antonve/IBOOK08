@@ -5,7 +5,7 @@
  * Time: 19:55
  * To change this template use File | Settings | File Templates.
  */
-package be.devine.cp3.ibook.view.vo
+package be.devine.cp3.ibook.vo
 {
 public class ImageVO extends ElementVO
 {

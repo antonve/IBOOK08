@@ -1,4 +1,4 @@
-package be.devine.cp3.ibook.view.vo {
+package be.devine.cp3.ibook.vo {
 
 public class PageVO {
 
