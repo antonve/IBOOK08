@@ -1,6 +1,7 @@
 package be.devine.cp3.ibook.model {
 
 import be.devine.cp3.ibook.factories.PageVOFactory;
+import be.devine.cp3.ibook.managers.PageManager;
 import be.devine.cp3.ibook.vo.PageVO;
 
 import cp3.requestQueue.RequestQueue;
@@ -25,6 +26,7 @@ public class AppModel extends EventDispatcher {
     private var _pages:Vector.<PageVO>;
 
     private var _queue:RequestQueue;
+    private var _pageManager:PageManager;
 
     // -- Singleton -- //
 
@@ -33,6 +35,8 @@ public class AppModel extends EventDispatcher {
         if (e == null) {
             throw new Error('AppModel is a singleton.');
         }
+
+        _pageManager = new PageManager();
     }
 
     public static function getInstance()
@@ -99,6 +103,16 @@ public class AppModel extends EventDispatcher {
         trace('[AppModel] Go to next page');
     }
 
+    // Anton 13/12 //
+    public function getPageById(id:uint):PageVO
+    {
+        if (id < this._pages.length) {
+            return this._pages[id];
+        }
+
+        throw new Error('Page with id ' + id + ' doesn\'t exist.');
+    }
+
     // -- Getters & Setters -- //
 
     // Fabian (23/11) - Getter imageIndex //
@@ -131,6 +145,10 @@ public class AppModel extends EventDispatcher {
         }
     }
 
+    public function get pageManager():PageManager
+    {
+        return _pageManager;
+    }
 }
 }
 

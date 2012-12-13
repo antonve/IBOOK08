@@ -18,6 +18,7 @@ public class Application extends Sprite {
 
         appModel = AppModel.getInstance();
         appModel.loadPagesXML("assets/data.xml");
+        appModel.pageManager.renderPage(0);
     }
 
     // -- Methods -- //
