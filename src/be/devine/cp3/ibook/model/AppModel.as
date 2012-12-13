@@ -13,6 +13,8 @@ import flash.events.Event;
 import flash.events.EventDispatcher;
 import flash.xml.XMLNode;
 
+import starling.display.Sprite;
+
 public class AppModel extends EventDispatcher {
 
     // -- Properties -- //
@@ -20,10 +22,12 @@ public class AppModel extends EventDispatcher {
     public static const SELECTED_PAGE_CHANGED:String = "selectedPageChanged";
     public static const PAGES_CHANGED:String = "pagesChanged";
 
-    private static var instance;
+    private static var instance:AppModel;
 
     private var _selectedPageIndex:int;
     private var _pages:Vector.<PageVO>;
+
+    private var _renderStage:Sprite;
 
     private var _queue:RequestQueue;
     private var _pageManager:PageManager;
@@ -35,8 +39,6 @@ public class AppModel extends EventDispatcher {
         if (e == null) {
             throw new Error('AppModel is a singleton.');
         }
-
-        _pageManager = new PageManager();
     }
 
     public static function getInstance()
@@ -147,7 +149,21 @@ public class AppModel extends EventDispatcher {
 
     public function get pageManager():PageManager
     {
+        if (_pageManager == null) {
+            _pageManager = new PageManager();
+        }
+
         return _pageManager;
+    }
+
+    public function get renderStage():Sprite
+    {
+        return _renderStage;
+    }
+
+    public function set renderStage(value:Sprite):void
+    {
+        _renderStage = value;
     }
 }
 }
