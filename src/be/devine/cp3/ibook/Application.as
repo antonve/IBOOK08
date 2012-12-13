@@ -17,7 +17,7 @@ public class Application extends Sprite {
         trace('[Application] CONSTRUCT');
 
         appModel = AppModel.getInstance();
-        appModel.loadPagesXML();
+        appModel.loadPagesXML("assets/data.xml");
     }
 
     // -- Methods -- //

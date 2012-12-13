@@ -48,12 +48,13 @@ public class AppModel extends EventDispatcher {
     // -- Methods -- //
 
     // Fabian (30/11) - Function Request Queue //
-    public function loadPagesXML():void
+    // Anton (13/01 - Made path configurable, hardcoded paths are always a bad idea //
+    public function loadPagesXML(path:String):void
     {
         _queue = new RequestQueue();
 
         // Load XML using Queue:
-        var xmlTask:XMLTask = new XMLTask("assets/data.xml");
+        var xmlTask:XMLTask = new XMLTask(path);
         xmlTask.addEventListener(Event.COMPLETE, xmlCompleteHandler);
         _queue.add(xmlTask);
 
