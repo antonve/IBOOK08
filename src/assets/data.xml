@@ -2,8 +2,8 @@
     <title>Development test data</title>
     <pages>
         <page>
-            <text type="title" pos="20,30">Test title</text>
-            <text pos="200,300" size="400,200">
+            <element type="title" pos="20,30">Test title</element>
+            <element type="text" pos="200,300" size="400,200">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque risus et eros sagittis id tristique erat tristique. Vivamus leo ante, vestibulum vitae volutpat eu, gravida non eros. Proin turpis mi, aliquet a volutpat eget, ornare ut odio. Vestibulum viverra justo placerat nibh pulvinar in adipiscing justo placerat. Vivamus et libero tellus, quis dictum nulla. Donec ac felis mi, at pellentesque nunc. Cras nibh dui, auctor quis hendrerit a, laoreet vel leo. Aenean lobortis magna at massa scelerisque mollis. Phasellus vestibulum tortor ut leo convallis consectetur. Nunc sagittis mi ac nunc laoreet quis blandit lacus suscipit. Fusce id elit velit, malesuada fermentum ante. Curabitur laoreet, velit quis aliquet tincidunt, eros tortor blandit ligula, feugiat facilisis dolor purus scelerisque erat. Sed eleifend massa in erat vestibulum gravida. Nulla adipiscing purus tellus, ut egestas mauris. Aliquam quam mauris, eleifend et molestie non, consequat ut sapien. Nullam dictum diam sit amet eros ultrices sit amet facilisis purus auctor.
 
                 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse suscipit posuere nunc, vitae laoreet risus pharetra sed. Quisque magna quam, rutrum ac vehicula sed, tincidunt nec leo. Ut sit amet vestibulum sapien. Suspendisse a purus at dui tincidunt dapibus sit amet ut neque. Vestibulum sollicitudin varius ipsum non interdum. Nulla id urna libero, eu sollicitudin leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam id lectus ante, in lobortis neque. Quisque blandit sollicitudin enim.
@@ -13,16 +13,16 @@
                 Ut eget lacus purus, sit amet pulvinar sapien. Curabitur ornare facilisis lacus et facilisis. Pellentesque id eros a eros placerat adipiscing. Suspendisse potenti. Donec at mauris sem. Sed quis mattis quam. Cras eget odio lorem, quis volutpat sem. Praesent luctus luctus leo nec faucibus. Suspendisse posuere, neque sed vestibulum vestibulum, tellus lacus hendrerit tellus, eget viverra est nisl non erat. Sed cursus blandit fermentum. Proin commodo volutpat aliquet.
 
                 Mauris volutpat nisl et odio tincidunt vel pharetra felis luctus. Proin placerat cursus fermentum. Suspendisse ut dictum erat. Sed aliquam sem ac lorem elementum eu pretium lacus iaculis. Integer tortor mi, varius non cursus eu, porttitor a nulla. Donec augue dui, elementum et mattis vel, placerat at nulla. Suspendisse at risus ligula, vitae venenatis metus. Nam imperdiet gravida velit, in sollicitudin felis hendrerit ac.
-            </text>
-            <img size="100,100">
+            </element>
+            <element type="img" size="100,100">
                 basketball.jpg
-            </img>
+            </element>
         </page>
         <page>
-            <text type="title" pos="20,30">Test title</text>
-            <solid>
+            <element type="title" pos="20,30">Test title</element>
+            <element type="solid">
                 0xff00ff
-            </solid>
+            </element>
         </page>
     </pages>
 </book>
