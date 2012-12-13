@@ -14,7 +14,7 @@
 
                 Mauris volutpat nisl et odio tincidunt vel pharetra felis luctus. Proin placerat cursus fermentum. Suspendisse ut dictum erat. Sed aliquam sem ac lorem elementum eu pretium lacus iaculis. Integer tortor mi, varius non cursus eu, porttitor a nulla. Donec augue dui, elementum et mattis vel, placerat at nulla. Suspendisse at risus ligula, vitae venenatis metus. Nam imperdiet gravida velit, in sollicitudin felis hendrerit ac.
             </element>
-            <element type="img" size="100,100">
+            <element type="img" size="964,394" pos="50,200">
                 test.jpg
             </element>
             <element type="solid" pos="0,0" size="1024,768">
