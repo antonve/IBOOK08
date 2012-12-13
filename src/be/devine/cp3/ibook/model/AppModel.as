@@ -57,14 +57,12 @@ public class AppModel extends EventDispatcher {
     // Anton (13/01 - Made path configurable, hardcoded paths are always a bad idea //
     public function loadPagesXML(path:String):void
     {
-        _queue = new RequestQueue();
-
         // Load XML using Queue:
         var xmlTask:XMLTask = new XMLTask(path);
         xmlTask.addEventListener(Event.COMPLETE, xmlCompleteHandler);
-        _queue.add(xmlTask);
+        queue.add(xmlTask);
 
-        _queue.start();
+        queue.start();
     }
 
     // Fabian (30/11) - XML Loaded //
@@ -164,6 +162,19 @@ public class AppModel extends EventDispatcher {
     public function set renderStage(value:Sprite):void
     {
         _renderStage = value;
+    }
+
+    public function get queue():RequestQueue
+    {
+        if (queue == null) {
+            _queue = new RequestQueue();
+        }
+        return _queue;
+    }
+
+    public function set queue(value:RequestQueue):void
+    {
+        _queue = value;
     }
 }
 }
