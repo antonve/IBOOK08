@@ -14,6 +14,8 @@ import be.devine.cp3.ibook.vo.SolidVO;
 import be.devine.cp3.ibook.vo.TextVO;
 import be.devine.cp3.ibook.vo.TitleVO;
 
+import flash.utils.getDefinitionByName;
+
 public class ElementVOFactory
 {
     public function ElementVOFactory()
@@ -23,48 +25,26 @@ public class ElementVOFactory
     public static function createFromXML(el:XML):ElementVO
     {
         switch ("" + el.@type) {
-            case 'text': return createTextVO(el);
-            case 'title': return createTitleVO(el);
-            case 'solid': return createSolidVO(el);
-            case 'img': return createImageVO(el);
+            case 'text': return createVO('be.devine.cp3.ibook.vo.TextVO', el);
+            case 'title': return createVO('be.devine.cp3.ibook.vo.TitleVO', el);
+            case 'solid': return createVO('be.devine.cp3.ibook.vo.SolidVO', el);
+            case 'img': return createVO('be.devine.cp3.ibook.vo.ImageVO', el);
         }
 
         throw new FactoryError('invalid XML for element: ' + el);
     }
 
-    private static function parseCoord(str:String):Array
+    private static function parsePoint(str:String):Array
     {
         return str.split(',');
     }
 
-    private static function createTextVO(el:XML):TextVO
+    private static function createVO(type:String, el:XML):ElementVO
     {
-        var coords:Array = parseCoord(el.@pos);
-        var vo:TextVO = new TextVO(String(el), coords[0], coords[1], uint(el.@width), uint(el.@height));
-
-        return vo;
-    }
-
-    private static function createTitleVO(el:XML):TitleVO
-    {
-        var coords:Array = parseCoord(el.@pos);
-        var vo:TitleVO = new TitleVO(String(el), coords[0], coords[1], uint(el.@width), uint(el.@height));
-
-        return vo;
-    }
-
-    private static function createSolidVO(el:XML):SolidVO
-    {
-        var coords:Array = parseCoord(el.@pos);
-        var vo:SolidVO = new SolidVO(uint(el), coords[0], coords[1], uint(el.@width), uint(el.@height));
-
-        return vo;
-    }
-
-    private static function createImageVO(el:XML):ImageVO
-    {
-        var coords:Array = parseCoord(el.@pos);
-        var vo:ImageVO = new ImageVO(String(el), coords[0], coords[1], uint(el.@width), uint(el.@height));
+        var coords:Array = parsePoint(el.@pos);
+        var dim:Array = parsePoint(el.@size);
+        var appClass:Class = getDefinitionByName(type) as Class;
+        var vo:ElementVO = new appClass(el, coords[0], coords[1], dim[0], dim[1]);
 
         return vo;
     }
