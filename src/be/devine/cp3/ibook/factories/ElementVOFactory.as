@@ -28,7 +28,7 @@ public class ElementVOFactory
             //case 'text': return createVO('be.devine.cp3.ibook.vo.TextVO', el);
             //case 'title': return createVO('be.devine.cp3.ibook.vo.TitleVO', el);
             case 'solid': return createVO('be.devine.cp3.ibook.vo.SolidVO', el);
-            //case 'img': return createVO('be.devine.cp3.ibook.vo.ImageVO', el);
+            case 'img': return createVO('be.devine.cp3.ibook.vo.ImageVO', el);
         }
 
         throw new FactoryError('invalid XML for element: ' + el);
@@ -41,6 +41,13 @@ public class ElementVOFactory
 
     private static function createVO(type:String, el:XML):ElementVO
     {
+        // make sure the VO's are compiled as well, without these you'll get an error.
+        var imageVO:ImageVO;
+        var solidVO:SolidVO;
+        var textVO:TextVO;
+        var titleVO:TitleVO;
+
+        // create VO
         var coords:Array = parsePoint(el.@pos);
         var dim:Array = parsePoint(el.@size);
         var appClass:Class = getDefinitionByName(type) as Class;
