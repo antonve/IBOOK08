@@ -82,7 +82,7 @@ public class AppModel extends EventDispatcher {
         }
 
         // save the data
-        this._pages = pages;
+        this.pages = pages;
         this._selectedPageIndex = 0;
     }
 
