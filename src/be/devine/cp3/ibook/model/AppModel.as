@@ -166,7 +166,7 @@ public class AppModel extends EventDispatcher {
 
     public function get queue():RequestQueue
     {
-        if (queue == null) {
+        if (_queue == null) {
             _queue = new RequestQueue();
         }
         return _queue;
