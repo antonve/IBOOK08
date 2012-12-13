@@ -37,7 +37,6 @@ public class SolidEngine
         q.y = solid.y;
 
         renderStage.addChild(q);
-        trace(q);
     }
 }
 }
