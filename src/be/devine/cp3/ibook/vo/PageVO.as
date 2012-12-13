@@ -10,7 +10,7 @@ public class PageVO {
 
     public function PageVO(els:Vector.<ElementVO>)
     {
-        _elements = els;
+        _elements = els.reverse();
     }
 
     // getter & setters
@@ -22,7 +22,7 @@ public class PageVO {
 
     public function set elements(value:Vector.<ElementVO>):void
     {
-        _elements = value;
+        _elements = value.reverse();
     }
 }
 }
