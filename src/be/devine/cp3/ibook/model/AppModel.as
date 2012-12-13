@@ -1,5 +1,6 @@
 package be.devine.cp3.ibook.model {
 
+import be.devine.cp3.ibook.factories.PageVOFactory;
 import be.devine.cp3.ibook.vo.PageVO;
 
 import cp3.requestQueue.RequestQueue;
@@ -7,6 +8,7 @@ import cp3.requestQueue.XMLTask;
 
 import flash.events.Event;
 import flash.events.EventDispatcher;
+import flash.xml.XMLNode;
 
 public class AppModel extends EventDispatcher {
 
@@ -59,17 +61,18 @@ public class AppModel extends EventDispatcher {
     // Fabian (30/11) - XML Loaded //
     private function xmlCompleteHandler(event:Event):void
     {
-        trace('[AppModel] XML Loaded');
+        trace('[AppModel] XML Load begin');
 
         var pagesXML = new XML(event.target.data);
-        var pages:Array = [];
-        for each(var page:Object in pagesXML.page) {
-            var pageVo:PageVO = new PageVO();
-            pageVo.title = page.title;
-            pageVo.content = page.content;
-            pageVo.background = page.background;
+        var pages:Vector.<PageVO> = new Vector.<PageVO>();
+        //trace(pagesXML);
+        for each(var page:XML in pagesXML.pages.page) {
+            var pageVo:PageVO = PageVOFactory.createFromXML(page);
+
             pages.push(pageVo);
         }
+        trace('[AppModel] XML Load end');
+
         //this.pages = pages;
         //this.currentPage = pages[0];
     }
