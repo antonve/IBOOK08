@@ -6,6 +6,8 @@ import be.devine.cp3.ibook.vo.PageVO;
 import cp3.requestQueue.RequestQueue;
 import cp3.requestQueue.XMLTask;
 
+import flash.desktop.NativeApplication;
+
 import flash.events.Event;
 import flash.events.EventDispatcher;
 import flash.xml.XMLNode;
@@ -20,7 +22,7 @@ public class AppModel extends EventDispatcher {
     private static var instance;
 
     private var _selectedPageIndex:int;
-    private var _pages:Vector.<String>;
+    private var _pages:Vector.<PageVO>;
 
     private var _queue:RequestQueue;
 
@@ -59,22 +61,29 @@ public class AppModel extends EventDispatcher {
     }
 
     // Fabian (30/11) - XML Loaded //
+    // Anton (13/12) - refactored using factories //
     private function xmlCompleteHandler(event:Event):void
     {
-        trace('[AppModel] XML Load begin');
-
+        // init
         var pagesXML = new XML(event.target.data);
         var pages:Vector.<PageVO> = new Vector.<PageVO>();
-        //trace(pagesXML);
+
+        // loop pages
         for each(var page:XML in pagesXML.pages.page) {
+            // use factory to build the PageVO's
             var pageVo:PageVO = PageVOFactory.createFromXML(page);
 
             pages.push(pageVo);
         }
-        trace('[AppModel] XML Load end');
 
-        //this.pages = pages;
-        //this.currentPage = pages[0];
+        // exit application if there are no pages in the xml
+        if (pages.length == 0) {
+            NativeApplication.nativeApplication.exit();
+        }
+
+        // save the data
+        this._pages = pages;
+        this._selectedPageIndex = 0;
     }
 
     // Fabian (23/11) - Function Previous Page //
@@ -107,13 +116,13 @@ public class AppModel extends EventDispatcher {
     }
 
     // Fabian (23/11) - Getter pageUrls //
-    public function get pages():Vector.<String>
+    public function get pages():Vector.<PageVO>
     {
         return _pages;
     }
 
     // Fabian (23/11) - Setter pageUrls //
-    public function set pages(value:Vector.<String>):void
+    public function set pages(value:Vector.<PageVO>):void
     {
         if (_pages != value) {
             _pages = value;
