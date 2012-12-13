@@ -11,20 +11,33 @@ import be.devine.cp3.ibook.model.errors.EngineError;
 import be.devine.cp3.ibook.vo.ElementVO;
 import be.devine.cp3.ibook.vo.SolidVO;
 
-public class SolidEngine implements IEngine
+import starling.display.Quad;
+
+import starling.display.Sprite;
+
+public class SolidEngine
 {
+    // properties
+    private var renderStage:Sprite;
+
     // methods
-    public function SolidEngine()
+    public function SolidEngine(stage:Sprite)
     {
+        renderStage = stage;
     }
 
-    public function render(stage:Object, element:ElementVO)
+    public function render(solid:Object):void
     {
-        if ( !(element is SolidVO)) {
+        if ( !(solid is SolidVO)) {
             throw new EngineError('This engine can only render Solids.');
         }
 
+        var q:Quad = new Quad(solid.width, solid.height, solid.color);
+        q.x = solid.x;
+        q.y = solid.y;
 
+        renderStage.addChild(q);
+        trace(q);
     }
 }
 }
