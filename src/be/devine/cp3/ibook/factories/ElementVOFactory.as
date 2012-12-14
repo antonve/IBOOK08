@@ -25,8 +25,8 @@ public class ElementVOFactory
     public static function createFromXML(el:XML):ElementVO
     {
         switch ("" + el.@type) {
-            //case 'text': return createVO('be.devine.cp3.ibook.vo.TextVO', el); break;
-            //case 'title': return createVO('be.devine.cp3.ibook.vo.TitleVO', el); break;
+            case 'text': return createVO('be.devine.cp3.ibook.vo.TextVO', el); break;
+            case 'title': return createVO('be.devine.cp3.ibook.vo.TitleVO', el); break;
             case 'solid': return createVO('be.devine.cp3.ibook.vo.SolidVO', el); break;
             case 'img': return createVO('be.devine.cp3.ibook.vo.ImageVO', el); break;
         }
