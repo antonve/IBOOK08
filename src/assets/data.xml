@@ -2,7 +2,7 @@
     <title>Development test data</title>
     <pages>
         <page>
-            <element type="title" pos="200,230">Test title</element>
+            <element type="title" pos="200,230" size="400,60">Test title</element>
             <element type="text" pos="200,300" size="400,200">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque risus et eros sagittis id tristique erat tristique. Vivamus leo ante, vestibulum vitae volutpat eu, gravida non eros. Proin turpis mi, aliquet a volutpat eget, ornare ut odio. Vestibulum viverra justo placerat nibh pulvinar in adipiscing justo placerat. Vivamus et libero tellus, quis dictum nulla. Donec ac felis mi, at pellentesque nunc. Cras nibh dui, auctor quis hendrerit a, laoreet vel leo. Aenean lobortis magna at massa scelerisque mollis. Phasellus vestibulum tortor ut leo convallis consectetur. Nunc sagittis mi ac nunc laoreet quis blandit lacus suscipit. Fusce id elit velit, malesuada fermentum ante. Curabitur laoreet, velit quis aliquet tincidunt, eros tortor blandit ligula, feugiat facilisis dolor purus scelerisque erat. Sed eleifend massa in erat vestibulum gravida. Nulla adipiscing purus tellus, ut egestas mauris. Aliquam quam mauris, eleifend et molestie non, consequat ut sapien. Nullam dictum diam sit amet eros ultrices sit amet facilisis purus auctor.
 
