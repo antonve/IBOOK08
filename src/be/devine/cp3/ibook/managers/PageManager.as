@@ -32,14 +32,29 @@ public class PageManager
     private var titleEngine:TitleEngine;
     private var _index:uint;
 
-    public function PageManager()
+    private static var instance:PageManager;
+
+    public function PageManager(e:Enforcer)
     {
+        if (e == null) {
+            throw new Error('AppModel is a singleton.');
+        }
+
         appModel = AppModel.getInstance();
         solidEngine = new SolidEngine(appModel.renderStage);
         imageEngine = new ImageEngine(appModel.renderStage);
         textEngine = new TextEngine(appModel.renderStage);
         titleEngine = new TitleEngine(appModel.renderStage);
         _index = 0;
+    }
+
+    public static function getInstance()
+    {
+        if (instance == null) {
+            instance = new PageManager(new Enforcer());
+        }
+
+        return instance;
     }
 
     public function renderPage(id:uint):void
@@ -60,3 +75,5 @@ public class PageManager
     }
 }
 }
+
+internal class Enforcer{};

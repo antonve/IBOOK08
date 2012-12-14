@@ -53,44 +53,6 @@ public class AppModel extends EventDispatcher {
 
     // -- Methods -- //
 
-    // Fabian (30/11) - Function Request Queue //
-    // Anton (13/01 - Made path configurable, hardcoded paths are always a bad idea //
-    public function loadPagesXML(path:String):void
-    {
-        // Load XML using Queue:
-        var xmlTask:XMLTask = new XMLTask(path);
-        xmlTask.addEventListener(Event.COMPLETE, xmlCompleteHandler);
-        queue.add(xmlTask);
-
-        queue.start();
-    }
-
-    // Fabian (30/11) - XML Loaded //
-    // Anton (13/12) - refactored using factories //
-    private function xmlCompleteHandler(event:Event):void
-    {
-        // init
-        var pagesXML = new XML(event.target.data);
-        var pages:Vector.<PageVO> = new Vector.<PageVO>();
-
-        // loop pages
-        for each(var page:XML in pagesXML.pages.page) {
-            // use factory to build the PageVO's
-            var pageVo:PageVO = PageVOFactory.createFromXML(page);
-
-            pages.push(pageVo);
-        }
-
-        // exit application if there are no pages in the xml
-        if (pages.length == 0) {
-            NativeApplication.nativeApplication.exit();
-        }
-
-        // save the data
-        this.pages = pages;
-        this._selectedPageIndex = 0;
-    }
-
     // Fabian (23/11) - Function Previous Page //
     public function goToPreviousPage():void
     {
@@ -141,17 +103,9 @@ public class AppModel extends EventDispatcher {
     {
         if (_pages != value) {
             _pages = value;
+            _selectedPageIndex = 0;
             dispatchEvent(new Event(PAGES_CHANGED));
         }
-    }
-
-    public function get pageManager():PageManager
-    {
-        if (_pageManager == null) {
-            _pageManager = new PageManager();
-        }
-
-        return _pageManager;
     }
 
     public function get renderStage():Sprite
@@ -170,11 +124,6 @@ public class AppModel extends EventDispatcher {
             _queue = new RequestQueue();
         }
         return _queue;
-    }
-
-    public function set queue(value:RequestQueue):void
-    {
-        _queue = value;
     }
 }
 }

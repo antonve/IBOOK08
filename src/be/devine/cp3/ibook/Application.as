@@ -1,5 +1,8 @@
 package be.devine.cp3.ibook {
 
+import be.devine.cp3.ibook.managers.PageManager;
+import be.devine.cp3.ibook.services.PageService;
+
 import flash.events.Event;
 
 import starling.display.Sprite;
@@ -31,7 +34,10 @@ public class Application extends Sprite {
 
         appModel = AppModel.getInstance();
         appModel.renderStage = this;
-        appModel.loadPagesXML("assets/data.xml");
+
+        var pageService:PageService = new PageService();
+        pageService.loadPagesXML("assets/data.xml");
+
         appModel.addEventListener(AppModel.PAGES_CHANGED, pagesChangedHandler);
     }
 
@@ -44,7 +50,7 @@ public class Application extends Sprite {
     private function pagesChangedHandler(event:Event):void
     {
         this.removeEventListener(AppModel.PAGES_CHANGED, pagesChangedHandler);
-        appModel.pageManager.renderPage(0);
+        PageManager.getInstance().renderPage(0);
     }
 }
 }
