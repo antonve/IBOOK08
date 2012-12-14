@@ -17,16 +17,16 @@ public class Application extends Sprite {
 
     private var appModel:AppModel;
 
-    /*
-    [Embed(source="assets/fonts/Helvetica.ttf", embedAsCFF="false", fontFamily="Helvetica")]
+
+    [Embed(source="/assets/fonts/Helvetica.ttf", embedAsCFF="false", fontFamily="Helvetica")]
     private static const Helvetica:Class;
 
-    [Embed(source="assets/fonts/HelveticaLight.ttf", embedAsCFF="false", fontFamily="Helvetica")]
+    [Embed(source="/assets/fonts/HelveticaLight.ttf", embedAsCFF="false", fontFamily="Helvetica")]
     private static const HelveticaLight:Class;
 
-    [Embed(source="assets/fonts/HelveticaBold.ttf", embedAsCFF="false", fontFamily="Helvetica")]
+    [Embed(source="/assets/fonts/HelveticaBold.ttf", embedAsCFF="false", fontFamily="Helvetica")]
     private static const HelveticaBold:Class;
-    */
+
 
     // -- Constructor -- //
 
