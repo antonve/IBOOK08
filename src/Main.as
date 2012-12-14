@@ -37,7 +37,10 @@ public class Main extends MovieClip {
         _starling = new Starling(Application, stage);
         _starling.start();
 
-        addChild(new Stats());
+        var stats:Stats = new Stats();
+        addChild(stats);
+        stats.x = stage.stageWidth - (stats.width);
+        stats.y = stage.stageHeight - (stats.height);
     }
 
     // -- Methods -- //
