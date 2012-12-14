@@ -2,6 +2,7 @@ package be.devine.cp3.ibook {
 
 import be.devine.cp3.ibook.managers.PageManager;
 import be.devine.cp3.ibook.services.PageService;
+import be.devine.cp3.ibook.view.components.UI;
 import be.devine.cp3.ibook.view.components.buttons.OverviewButton;
 
 import flash.events.Event;
@@ -52,11 +53,7 @@ public class Application extends Sprite {
     {
         this.removeEventListener(AppModel.PAGES_CHANGED, pagesChangedHandler);
         PageManager.getInstance().renderPage(0);
-        var button:OverviewButton = new OverviewButton();
-        button.x = 100;
-        button.y = 50;
-
-        addChild(button);
+        addChild(new UI());
     }
 }
 }
