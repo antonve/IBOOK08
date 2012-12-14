@@ -23,12 +23,8 @@ public class TextEngine {
 
     // -- Methods -- //
 
-    public function render(textContent:Object, index:uint):void
+    public function render(textContent:TextVO, index:uint):void
     {
-        if ( !(textContent is TextVO)) {
-            throw new EngineError('This engine can only render Text.');
-        }
-
         var textField:TextField = new TextField(textContent.width, textContent.height, textContent.text, "Helvetica", 16, 0x000000);
         textField.hAlign = HAlign.LEFT;
         textField.vAlign = VAlign.TOP;

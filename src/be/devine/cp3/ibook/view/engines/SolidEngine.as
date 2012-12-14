@@ -26,12 +26,8 @@ public class SolidEngine
         renderStage = stage;
     }
 
-    public function render(solid:Object, index:uint):void
+    public function render(solid:SolidVO, index:uint):void
     {
-        if ( !(solid is SolidVO)) {
-            throw new EngineError('This engine can only render Solids.');
-        }
-
         var q:Quad = new Quad(solid.width, solid.height, solid.color);
         q.x = solid.x;
         q.y = solid.y;

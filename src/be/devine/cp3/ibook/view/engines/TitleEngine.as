@@ -22,12 +22,8 @@ public class TitleEngine {
 
     // -- Methods -- //
 
-    public function render(title:Object, index:uint):void
+    public function render(title:TitleVO, index:uint):void
     {
-        if ( !(title is TitleVO)) {
-            throw new EngineError('This engine can only render Titles.');
-        }
-
         var textField = new TextField(title.width, title.height, title.text, "Helvetica", 32, 0x000000);
         textField.hAlign = HAlign.LEFT;
         textField.vAlign = VAlign.TOP;

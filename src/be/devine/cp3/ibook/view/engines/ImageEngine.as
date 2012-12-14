@@ -36,12 +36,8 @@ public class ImageEngine
         _index = new Dictionary();
     }
 
-    public function render(image:Object, index:uint):void
+    public function render(image:ImageVO, index:uint):void
     {
-        if ( !(image is ImageVO)) {
-            throw new EngineError('This engine can only render Images.');
-        }
-
         vo = image as ImageVO;
 
         var q:RequestQueue = AppModel.getInstance().queue;
