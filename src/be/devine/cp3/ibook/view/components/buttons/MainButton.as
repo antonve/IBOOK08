@@ -110,7 +110,11 @@ public class MainButton extends Sprite
 
         // create starling image
         var texture:Texture = Texture.fromBitmapData(bd);
-        return new Image(texture);
+        var image:Image = new Image(texture);
+        image.x = -1 * (image.width / 2);
+        image.y = -1 * (image.height / 2);
+
+        return image;
     }
 }
 }
