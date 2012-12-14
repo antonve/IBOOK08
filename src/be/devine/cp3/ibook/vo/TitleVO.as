@@ -9,6 +9,9 @@ package be.devine.cp3.ibook.vo
 {
 public class TitleVO extends TextVO
 {
+
+    // -- Constructor -- //
+
     public function TitleVO(text:String, x:Number, y:Number, width:uint, height:uint)
     {
         super(text, x, y, width, height);
