@@ -25,7 +25,7 @@ public class Main extends MovieClip {
 
     public function Main()
     {
-        trace('[Main] CONSTRUCT');
+        trace('[Main] App init');
 
         stage.align = StageAlign.TOP_LEFT;
         stage.scaleMode = StageScaleMode.NO_SCALE;

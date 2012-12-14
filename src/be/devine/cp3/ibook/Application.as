@@ -32,8 +32,6 @@ public class Application extends Sprite {
 
     public function Application()
     {
-        trace('[Application] CONSTRUCT');
-
         appModel = AppModel.getInstance();
         appModel.renderStage = this;
 

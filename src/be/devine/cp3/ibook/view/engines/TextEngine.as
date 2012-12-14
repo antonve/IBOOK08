@@ -46,7 +46,7 @@ public class TextEngine {
 
         // convert to bitmap data
         var bitmapData:BitmapData = new BitmapData(textContent.width, textContent.height, true, 0x0);
-        bitmapData.draw(nativeTF); trace(nativeTF);
+        bitmapData.draw(nativeTF);
 
         // apply bitmap data to quad and set the position
         var texture:Texture = Texture.fromBitmapData(bitmapData);

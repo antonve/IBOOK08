@@ -20,7 +20,6 @@ public class PageVOFactory
 
     public static function createFromXML(p:XML):PageVO
     {
-        //trace(p);
         var els:Vector.<ElementVO> = new Vector.<ElementVO>();
 
         for each (var element:XML in p.*) {
