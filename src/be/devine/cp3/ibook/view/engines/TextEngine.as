@@ -1,12 +1,16 @@
 package be.devine.cp3.ibook.view.engines {
 
-import be.devine.cp3.ibook.model.errors.EngineError;
 import be.devine.cp3.ibook.vo.TextVO;
 
+import flash.display.BitmapData;
+
+import flash.text.TextField;
+import flash.text.TextFormat;
+
+import starling.display.Image;
+
 import starling.display.Sprite;
-import starling.text.TextField;
-import starling.utils.HAlign;
-import starling.utils.VAlign;
+import starling.textures.Texture;
 
 public class TextEngine {
 
@@ -23,15 +27,35 @@ public class TextEngine {
 
     // -- Methods -- //
 
+    // refactored to use native textfields, so the appearance of text can be configured more precisely
     public function render(textContent:TextVO, index:uint):void
     {
-        var textField:TextField = new TextField(textContent.width, textContent.height, textContent.text, "Helvetica", 16, 0x000000);
-        textField.hAlign = HAlign.LEFT;
-        textField.vAlign = VAlign.TOP;
-        textField.x = textContent.x;
-        textField.y = textContent.y;
+        // set textformat
+        var TFOR:TextFormat = new TextFormat("Helvetica", 16, 0x000000);
+        TFOR.leading = 10;
 
-        renderStage.addChildAt(textField, index);
+        // create and configure textfield
+        var nativeTF:TextField = new TextField();
+        nativeTF.defaultTextFormat = TFOR;
+        nativeTF.width = textContent.width;
+        nativeTF.height = textContent.height;
+        nativeTF.text = textContent.text;
+        nativeTF.multiline = true;
+        nativeTF.wordWrap = true;
+        nativeTF.antiAliasType = "advanced";
+
+        // convert to bitmap data
+        var bitmapData:BitmapData = new BitmapData(textContent.width, textContent.height, true, 0x0);
+        bitmapData.draw(nativeTF); trace(nativeTF);
+
+        // apply bitmap data to quad and set the position
+        var texture:Texture = Texture.fromBitmapData(bitmapData);
+        var img:Image = new Image(texture);
+        img.x = textContent.x;
+        img.y = textContent.y;
+
+        // and we're done
+        renderStage.addChildAt(img, index);
     }
 
 }
