@@ -15,6 +15,8 @@ import cp3.requestQueue.RequestQueue;
 import flash.display.BitmapData;
 import flash.events.Event;
 import flash.geom.Matrix;
+import flash.utils.Dictionary;
+
 import starling.display.Image;
 import starling.display.Sprite;
 import starling.textures.Texture;
@@ -25,16 +27,17 @@ public class ImageEngine
     // properties
     private var renderStage:Sprite;
     private var vo:ImageVO;
+    private var _index:Dictionary;
 
     // methods
     public function ImageEngine(stage:Sprite)
     {
         renderStage = stage;
+        _index = new Dictionary();
     }
 
-    public function render(image:Object):void
+    public function render(image:Object, index:uint):void
     {
-        trace('render image');
         if ( !(image is ImageVO)) {
             throw new EngineError('This engine can only render Images.');
         }
@@ -44,8 +47,9 @@ public class ImageEngine
         var q:RequestQueue = AppModel.getInstance().queue;
         var task:ImageTask = new ImageTask('assets/images/' + image.path);
         q.add(task);
+        _index[task] = index;
 
-        task.addEventListener(Event.COMPLETE, completeHandler)
+        task.addEventListener(Event.COMPLETE, completeHandler);
     }
 
     private function completeHandler(event:Event):void
@@ -69,7 +73,7 @@ public class ImageEngine
         finalImg.x = vo.x;
         finalImg.y = vo.y;
 
-        renderStage.addChild(finalImg);
+        renderStage.addChildAt(finalImg, _index[img]);
     }
 }
 }

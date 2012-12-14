@@ -23,19 +23,19 @@ public class TextEngine {
 
     // -- Methods -- //
 
-    public function render(textContent:Object):void
+    public function render(textContent:Object, index:uint):void
     {
         if ( !(textContent is TextVO)) {
             throw new EngineError('This engine can only render Text.');
         }
 
-        var textField = new TextField(textContent.width, textContent.height, textContent.text, "Helvetica", 16, 0x000000);
+        var textField:TextField = new TextField(textContent.width, textContent.height, textContent.text, "Helvetica", 16, 0x000000);
         textField.hAlign = HAlign.LEFT;
         textField.vAlign = VAlign.TOP;
         textField.x = textContent.x;
         textField.y = textContent.y;
 
-        renderStage.addChild(textField);
+        renderStage.addChildAt(textField, index);
     }
 
 }

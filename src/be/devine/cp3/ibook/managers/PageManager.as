@@ -17,6 +17,8 @@ import be.devine.cp3.ibook.view.engines.TitleEngine;
 import be.devine.cp3.ibook.vo.ElementVO;
 import be.devine.cp3.ibook.vo.PageVO;
 
+import starling.display.Sprite;
+
 public class PageManager
 {
     private var appModel:AppModel;
@@ -24,6 +26,7 @@ public class PageManager
     private var imageEngine:ImageEngine;
     private var textEngine:TextEngine;
     private var titleEngine:TitleEngine;
+    private var _index:uint;
 
     public function PageManager()
     {
@@ -32,6 +35,7 @@ public class PageManager
         imageEngine = new ImageEngine(appModel.renderStage);
         textEngine = new TextEngine(appModel.renderStage);
         titleEngine = new TitleEngine(appModel.renderStage);
+        _index = 0;
     }
 
     public function renderPage(id:uint):void
@@ -43,11 +47,10 @@ public class PageManager
         for each (var el:ElementVO in page.elements) {
             // get classname and choose render engine depending on the type
             switch (getQualifiedClassName(el).split('::').pop()) {
-                case 'SolidVO': solidEngine.render(el); break;
-                case 'ImageVO': imageEngine.render(el); break;
-                case 'TextVO': textEngine.render(el); break;
-                case 'TitleVO': titleEngine.render(el); break;
-
+                case 'SolidVO': solidEngine.render(el, _index++); break;
+                case 'ImageVO': imageEngine.render(el, _index); break;
+                case 'TextVO': textEngine.render(el, _index++); break;
+                case 'TitleVO': titleEngine.render(el, _index++); break;
             }
         }
     }

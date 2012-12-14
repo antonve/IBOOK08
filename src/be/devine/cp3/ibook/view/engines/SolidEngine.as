@@ -26,7 +26,7 @@ public class SolidEngine
         renderStage = stage;
     }
 
-    public function render(solid:Object):void
+    public function render(solid:Object, index:uint):void
     {
         if ( !(solid is SolidVO)) {
             throw new EngineError('This engine can only render Solids.');
@@ -36,7 +36,7 @@ public class SolidEngine
         q.x = solid.x;
         q.y = solid.y;
 
-        renderStage.addChild(q);
+        renderStage.addChildAt(q, index);
     }
 }
 }

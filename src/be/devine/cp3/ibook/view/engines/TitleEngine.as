@@ -22,7 +22,7 @@ public class TitleEngine {
 
     // -- Methods -- //
 
-    public function render(title:Object):void
+    public function render(title:Object, index:uint):void
     {
         if ( !(title is TitleVO)) {
             throw new EngineError('This engine can only render Titles.');
@@ -34,7 +34,7 @@ public class TitleEngine {
         textField.x = title.x;
         textField.y = title.y;
 
-        renderStage.addChild(textField);
+        renderStage.addChildAt(textField, index);
     }
 
 }
