@@ -66,10 +66,12 @@ public class MainButton extends Sprite
         if (ev.getTouch(ev.target as DisplayObject, TouchPhase.HOVER)) {
             removeChild(_img);
             addChild(_hoverImg);
+            useHandCursor = true;
         }
         if (ev.getTouch(ev.target as DisplayObject) == null) {
             removeChild(_hoverImg);
             addChild(_img);
+            useHandCursor = false;
         }
     }
 
