@@ -12,18 +12,26 @@ import be.devine.cp3.ibook.view.components.buttons.MainButton;
 import be.devine.cp3.ibook.view.components.buttons.NextButton;
 import be.devine.cp3.ibook.view.components.buttons.OverviewButton;
 import be.devine.cp3.ibook.view.components.buttons.PrevButton;
-import starling.display.Quad;
 
+import flash.events.Event;
+
+import starling.display.Quad;
 import starling.display.Sprite;
 import starling.events.Event;
 
 public class UI extends Sprite
 {
     private var appModel:AppModel;
+    private var btnNext:NextButton;
+    private var btnPrev:PrevButton;
+    private var hasNext:Boolean;
+    private var hasPrev:Boolean;
 
     public function UI()
     {
         appModel = AppModel.getInstance();
+        hasNext = false;
+        hasPrev = false;
 
         // draw bar at the bottom
         drawSolid(0xde1235, appModel.renderStage.width, 100, 0, appModel.renderStage.height - 100);
@@ -32,11 +40,16 @@ public class UI extends Sprite
         // overview button
         renderBtnOverview();
 
-        // next button
+        // next/prev button
         renderBtnNext();
-
-        // prev button
         renderBtnPrev();
+
+        if (appModel.hasNextPage()) {
+            hasNext = true;
+            addChild(btnNext);
+        }
+
+        appModel.addEventListener(AppModel.SELECTED_PAGE_CHANGED, appModel_selectedPageChangedHandler);
     }
 
     private function renderBtnOverview():void
@@ -44,24 +57,24 @@ public class UI extends Sprite
         var btnOverview:OverviewButton = new OverviewButton();
         btnOverview.x = (appModel.renderStage.width) / 2; //447
         btnOverview.y = (appModel.renderStage.height - 50); //697
-        btnOverview.addEventListener(MainButton.CLICKED, btnOverview_clickedHandler)
+        btnOverview.addEventListener(MainButton.CLICKED, btnOverview_clickedHandler);
         addChild(btnOverview);
     }
 
     private function renderBtnNext():void
     {
-        var btnNext:NextButton = new NextButton();
+        btnNext = new NextButton();
         btnNext.x = (appModel.renderStage.width) / 4 * 3;
         btnNext.y = (appModel.renderStage.height - 50);
-        addChild(btnNext);
+        btnNext.addEventListener(MainButton.CLICKED, btnNext_clickedHandler);
     }
 
     private function renderBtnPrev():void
     {
-        var btnPrev:PrevButton = new PrevButton();
+        btnPrev = new PrevButton();
         btnPrev.x = (appModel.renderStage.width) / 4;
         btnPrev.y = (appModel.renderStage.height - 50);
-        addChild(btnPrev);
+        btnPrev.addEventListener(MainButton.CLICKED, btnPrev_clickedHandler);
     }
 
 
@@ -74,9 +87,43 @@ public class UI extends Sprite
         addChild(q);
     }
 
-    private function btnOverview_clickedHandler(event:Event):void
+    private function btnOverview_clickedHandler(event:starling.events.Event):void
     {
         trace('overview CLICKED');
+    }
+
+    private function btnNext_clickedHandler(event:starling.events.Event):void
+    {
+        trace('next CLICKED');
+        appModel.goToNextPage();
+    }
+
+    private function btnPrev_clickedHandler(event:starling.events.Event):void
+    {
+        trace('prev CLICKED');
+    }
+
+    private function appModel_selectedPageChangedHandler(event:flash.events.Event):void
+    {
+        if (!hasNext && appModel.hasNextPage()) {
+            hasNext = true;
+            addChild(btnNext);
+        }
+
+        if (hasNext && !appModel.hasNextPage()) {
+            hasNext = false;
+            removeChild(btnNext);
+        }
+
+        if (!hasPrev && appModel.hasPrevPage()) {
+            hasPrev = true;
+            addChild(btnPrev);
+        }
+
+        if (hasPrev && !appModel.hasPrevPage()) {
+            hasPrev = false;
+            removeChild(btnPrev);
+        }
     }
 }
 }

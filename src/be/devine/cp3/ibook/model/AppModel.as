@@ -56,13 +56,17 @@ public class AppModel extends EventDispatcher {
     // Fabian (23/11) - Function Previous Page //
     public function goToPreviousPage():void
     {
-        trace('[AppModel] Go to previous page');
+        if (hasPrevPage()) {
+            selectedPageIndex--;
+        }
     }
 
     // Fabian (23/11) - Function Next Page //
     public function goToNextPage():void
     {
-        trace('[AppModel] Go to next page');
+        if (hasNextPage()) {
+            selectedPageIndex++;
+        }
     }
 
     // Anton 13/12 //
@@ -73,6 +77,16 @@ public class AppModel extends EventDispatcher {
         }
 
         throw new Error('Page with id ' + id + ' doesn\'t exist.');
+    }
+
+    public function hasNextPage():Boolean
+    {
+        return _selectedPageIndex < _pages.length;
+    }
+
+    public function hasPrevPage():Boolean
+    {
+        return _selectedPageIndex !== 0;
     }
 
     // -- Getters & Setters -- //
