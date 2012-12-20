@@ -14,6 +14,7 @@ import cp3.requestQueue.ImageTask;
 import cp3.requestQueue.RequestQueue;
 import flash.display.BitmapData;
 import flash.events.Event;
+import flash.events.IOErrorEvent;
 import flash.geom.Matrix;
 import flash.utils.Dictionary;
 
@@ -49,8 +50,15 @@ public class ImageEngine
         var dummy:Sprite = new Sprite();
         dummy.name = 'dummy' + index;
         renderStage.addChildAt(dummy, index);
+        trace('kankr');
 
+        task.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, IOErrorHandler)
         task.addEventListener(Event.COMPLETE, completeHandler);
+    }
+
+    private function IOErrorHandler(e:IOErrorEvent):void
+    {
+        trace ('URL not found');
     }
 
     private function completeHandler(event:Event):void
@@ -78,7 +86,9 @@ public class ImageEngine
         finalImg.name = 'image' + _index[img];
         renderStage.addChild(finalImg);
         renderStage.swapChildren(dummy,finalImg);
-        //renderStage.removeChild(dummy, true);
+        renderStage.removeChild(dummy, true);
+
+        trace('kukuku');
     }
 }
 }

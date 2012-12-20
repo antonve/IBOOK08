@@ -21,6 +21,8 @@ import be.devine.cp3.ibook.vo.SolidVO;
 import be.devine.cp3.ibook.vo.TextVO;
 import be.devine.cp3.ibook.vo.TitleVO;
 
+import flash.errors.IOError;
+
 import flash.events.Event;
 
 import starling.display.Sprite;
@@ -100,6 +102,8 @@ public class PageManager
                 case 'TitleVO': titleEngine.render(el as TitleVO, _index++); break;
             }
         }
+
+        appModel.queue.start();
 
         _index = 0;
     }
