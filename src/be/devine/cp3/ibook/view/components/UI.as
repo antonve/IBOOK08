@@ -45,7 +45,7 @@ public class UI extends Sprite
 
 
         // overview button
-        renderBtnOverview();
+        //renderBtnOverview();
 
         // next/prev button
         renderBtnNext();
@@ -60,14 +60,14 @@ public class UI extends Sprite
         Starling.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDownHandler);
     }
 
-    private function renderBtnOverview():void
-    {
-        var btnOverview:OverviewButton = new OverviewButton();
-        btnOverview.x = (appModel.renderStage.width) / 2; //447
-        btnOverview.y = (appModel.renderStage.height - 50); //697
-        btnOverview.addEventListener(MainButton.CLICKED, btnOverview_clickedHandler);
-        addChild(btnOverview);
-    }
+    //private function renderBtnOverview():void
+    //{
+    //    var btnOverview:OverviewButton = new OverviewButton();
+    //    btnOverview.x = (appModel.renderStage.width) / 2; //447
+    //    btnOverview.y = (appModel.renderStage.height - 50); //697
+    //    btnOverview.addEventListener(MainButton.CLICKED, btnOverview_clickedHandler);
+    //    addChild(btnOverview);
+    //}
 
     private function renderBtnNext():void
     {
@@ -95,10 +95,10 @@ public class UI extends Sprite
         addChild(q);
     }
 
-    private function btnOverview_clickedHandler(event:starling.events.Event):void
-    {
-        trace('overview CLICKED');
-    }
+    //private function btnOverview_clickedHandler(event:starling.events.Event):void
+    //{
+    //    trace('overview CLICKED');
+    //}
 
     private function btnNext_clickedHandler(event:starling.events.Event):void
     {
