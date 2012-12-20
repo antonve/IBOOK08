@@ -31,6 +31,7 @@ public class SolidEngine
         var q:Quad = new Quad(solid.width, solid.height, solid.color);
         q.x = solid.x;
         q.y = solid.y;
+        q.name = 'quad' + index;
 
         renderStage.addChildAt(q, index);
     }

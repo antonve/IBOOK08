@@ -26,7 +26,7 @@ public class ImageEngine
 {
     // properties
     private var renderStage:Sprite;
-    private var vo:ImageVO;
+    private var vo:Dictionary;
     private var _index:Dictionary;
 
     // methods
@@ -34,16 +34,21 @@ public class ImageEngine
     {
         renderStage = stage;
         _index = new Dictionary();
+        vo = new Dictionary();
     }
 
     public function render(image:ImageVO, index:uint):void
     {
-        vo = image as ImageVO;
+        vo[index] = image as ImageVO;
 
         var q:RequestQueue = AppModel.getInstance().queue;
         var task:ImageTask = new ImageTask('assets/images/' + image.path);
         q.add(task);
-        _index[task] = index;
+        _index[task] = index.toString();
+
+        var dummy:Sprite = new Sprite();
+        dummy.name = 'dummy' + index;
+        renderStage.addChildAt(dummy, index);
 
         task.addEventListener(Event.COMPLETE, completeHandler);
     }
@@ -52,24 +57,28 @@ public class ImageEngine
     {
         // get image from the event
         var img:ImageTask = event.target.image as ImageTask;
+        var dummy:Sprite = renderStage.getChildAt(_index[img]) as Sprite;
+        var index:String = dummy.name.substr(5);
 
         // calculate scales in case the width of the original image isn't the same as in the xml
-        var scaleHeight:Number = vo.height / img.height;
-        var scaleWidth:Number = vo.width / img.width;
+        var scaleHeight:Number = vo[index].height / img.height;
+        var scaleWidth:Number = vo[index].width / img.width;
         var matrix:Matrix = new Matrix();
         matrix.scale(scaleWidth, scaleHeight);
 
         // resize the data
-        var bd:BitmapData = new BitmapData(vo.width, vo.height, true);
+        var bd:BitmapData = new BitmapData(vo[index].width, vo[index].height, true, 0x000000);
         bd.draw(img, matrix, null, null, null, true);
 
         // create starling image
         var texture:Texture = Texture.fromBitmapData(bd);
         var finalImg:Image = new Image(texture);
-        finalImg.x = vo.x;
-        finalImg.y = vo.y;
-
-        renderStage.addChildAt(finalImg, _index[img]);
+        finalImg.x = vo[index].x;
+        finalImg.y = vo[index].y;
+        finalImg.name = 'image' + _index[img];
+        renderStage.addChild(finalImg);
+        renderStage.swapChildren(dummy,finalImg);
+        //renderStage.removeChild(dummy, true);
     }
 }
 }

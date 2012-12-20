@@ -95,7 +95,7 @@ public class PageManager
             // get classname and choose render engine depending on the type
             switch (getQualifiedClassName(el).split('::').pop()) {
                 case 'SolidVO': solidEngine.render(el as SolidVO, _index++); break;
-                case 'ImageVO': imageEngine.render(el as ImageVO, _index); break;
+                case 'ImageVO': imageEngine.render(el as ImageVO, _index++); break;
                 case 'TextVO': textEngine.render(el as TextVO, _index++); break;
                 case 'TitleVO': titleEngine.render(el as TitleVO, _index++); break;
             }

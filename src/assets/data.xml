@@ -27,6 +27,75 @@
             </element>
         </page>
 
+        <page>
+            <element type="img" pos="30,25" size="183,183">
+                header_logo.png
+            </element>
+            <element type="img" pos="226,38" size="755,46">
+                header_motto.jpg
+            </element>
+            <element type="title" pos="238,138" size="400,60">
+                The designer Christmas gift guide, part six
+            </element>
+            <element type="text" pos="237,244" size="354,130">
+                Spiderpodium (£14.95)
+                The Spiderpodium is a proper gadget. It may look like a flash pipe cleaner but it's actually multi-function stand that bends and twists into a holder for virtually any handheld device. Now available in Christmas colours.
+            </element>
+            <element type="text" pos="237,410" size="354,175">
+                Vjay (£1.99 iPhone / £6.99 iPad)
+                Fancy yourself as the next DJ Yoda? Give Vjay a whirl. The app for iPhone and iPad created by Algoriddim, lets you to mix, scratch and mashup video footage. It also allows direct TV display, wireless streaming using Apple TV and you can record your performances live to share on social networks.
+            </element>
+            <element type="text" pos="624,244" size="354,180">
+                Harry Potter prints (From £49)
+                Harry Potter boffins and typography aficionados alike will be thrilled to find one of these in their stockings. Eduardo Lima and Miraphora Mina are the duo behind the graphic art on the – seemingly endless – film franchise, and they’ve unveiled some new limited edition, numbered, embossed and signature-stamped prints. Magic.
+            </element>
+            <element type="text" pos="624,454" size="354,160">
+                Mango bikes
+                You can customise virtually every aspect of a Mango bike: including frame size, handle bar type, saddle type, pedals, chains and the colour of all of those things. Order now and you'll get yours in time to have wheelie competitions on Christmas morning.
+            </element>
+            <element type="img" pos="30,244" size="182,107">
+                page2_img1.jpg
+            </element>
+            <element type="img" pos="30,355" size="183,183">
+                page2_img2.jpg
+            </element>
+            <element type="img" pos="30,546" size="183,76">
+                page2_img3.jpg
+            </element>
+            <element type="solid" pos="0,0" size="1024,768">
+                0xffffff
+            </element>
+        </page>
+
+        <page>
+            <element type="img" pos="30,25" size="183,183">
+                header_logo.png
+            </element>
+            <element type="img" pos="226,38" size="755,46">
+                header_motto.jpg
+            </element>
+            <element type="title" pos="226,138" size="400,60">
+                LBi celebrates award with Barley-esque video
+            </element>
+            <element type="text" pos="226,184" size="755,354">
+                Marketing Magazine's Digital Agency of the Year channels Nathan Barley in new video
+
+                The spirit of Nathan Barley lives on in a well futile new video from a London-based marketing and technology agency.
+
+                To celebrate winning the accolade of Marketing Magazine's Digital Agency of the Year, LBi has produced a tongue-in-cheek short film in which a trio of east London hipsters compare the relative merits of a customised mountain bike... and a unicorn.
+
+                The unicorn, LBi says, "symbolises the never-ending quest for digital mastery." The mountain bike, on the other hand, has a "little bell" that is "going off – ping, ping, you know what I mean, ping?!"
+
+                LBi saw off competition from AKQA, Jam, Glue Isobar and R/GA London to take the prize, after working with clients such as Dyson, Honda, The Guardian and Microsoft Internet Explorer in 2012.
+            </element>
+            <element type="img" pos="226,463" size="756,174">
+                page3_banner.jpg
+            </element>
+            <element type="solid" pos="0,0" size="1024,768">
+                0xffffff
+            </element>
+        </page>
+
     </pages>
 
 </book>

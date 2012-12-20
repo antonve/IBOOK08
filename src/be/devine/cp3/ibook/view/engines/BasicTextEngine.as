@@ -49,6 +49,7 @@ public class BasicTextEngine
         var img:Image = new Image(texture);
         img.x = textContent.x;
         img.y = textContent.y;
+        img.name = 'text_' + textContent.text.substr(0, textContent.text.length < 5 ? textContent.text.length : 5);
 
         // and we're done
         return img;
