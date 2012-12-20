@@ -57,6 +57,30 @@ public class PageManager
         return instance;
     }
 
+    public function goToPreviousPage():void
+    {
+        if (hasPrevPage()) {
+            appModel.selectedPageIndex--;
+        }
+    }
+
+    public function goToNextPage():void
+    {
+        if (hasNextPage()) {
+            appModel.selectedPageIndex++;
+        }
+    }
+
+    public function hasNextPage():Boolean
+    {
+        return appModel.selectedPageIndex < appModel.pages.length-1;
+    }
+
+    public function hasPrevPage():Boolean
+    {
+        return appModel.selectedPageIndex !== 0;
+    }
+
     public function renderPage(id:uint):void
     {
         // get the page data

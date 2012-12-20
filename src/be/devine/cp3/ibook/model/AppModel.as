@@ -53,22 +53,6 @@ public class AppModel extends EventDispatcher {
 
     // -- Methods -- //
 
-    // Fabian (23/11) - Function Previous Page //
-    public function goToPreviousPage():void
-    {
-        if (hasPrevPage()) {
-            selectedPageIndex--;
-        }
-    }
-
-    // Fabian (23/11) - Function Next Page //
-    public function goToNextPage():void
-    {
-        if (hasNextPage()) {
-            selectedPageIndex++;
-        }
-    }
-
     // Anton 13/12 //
     public function getPageById(id:uint):PageVO
     {
@@ -77,16 +61,6 @@ public class AppModel extends EventDispatcher {
         }
 
         throw new Error('Page with id ' + id + ' doesn\'t exist.');
-    }
-
-    public function hasNextPage():Boolean
-    {
-        return _selectedPageIndex < _pages.length;
-    }
-
-    public function hasPrevPage():Boolean
-    {
-        return _selectedPageIndex !== 0;
     }
 
     // -- Getters & Setters -- //

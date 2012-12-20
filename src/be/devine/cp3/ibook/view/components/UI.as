@@ -7,6 +7,7 @@
  */
 package be.devine.cp3.ibook.view.components
 {
+import be.devine.cp3.ibook.managers.PageManager;
 import be.devine.cp3.ibook.model.AppModel;
 import be.devine.cp3.ibook.view.components.buttons.MainButton;
 import be.devine.cp3.ibook.view.components.buttons.NextButton;
@@ -26,9 +27,11 @@ public class UI extends Sprite
     private var btnPrev:PrevButton;
     private var hasNext:Boolean;
     private var hasPrev:Boolean;
+    private var pageManager:PageManager;
 
     public function UI()
     {
+        pageManager = PageManager.getInstance();
         appModel = AppModel.getInstance();
         hasNext = false;
         hasPrev = false;
@@ -44,7 +47,7 @@ public class UI extends Sprite
         renderBtnNext();
         renderBtnPrev();
 
-        if (appModel.hasNextPage()) {
+        if (pageManager.hasNextPage()) {
             hasNext = true;
             addChild(btnNext);
         }
@@ -94,33 +97,30 @@ public class UI extends Sprite
 
     private function btnNext_clickedHandler(event:starling.events.Event):void
     {
-        trace('next CLICKED');
-        appModel.goToNextPage();
+        pageManager.goToNextPage();
     }
 
     private function btnPrev_clickedHandler(event:starling.events.Event):void
     {
-        trace('prev CLICKED');
+        pageManager.goToPreviousPage();
     }
 
     private function appModel_selectedPageChangedHandler(event:flash.events.Event):void
     {
-        if (!hasNext && appModel.hasNextPage()) {
+        // handle visual state of the next button
+        if (!hasNext && pageManager.hasNextPage()) {
             hasNext = true;
             addChild(btnNext);
-        }
-
-        if (hasNext && !appModel.hasNextPage()) {
+        } else if (hasNext && !pageManager.hasNextPage()) {
             hasNext = false;
             removeChild(btnNext);
         }
 
-        if (!hasPrev && appModel.hasPrevPage()) {
+        // handle visual state of the previous button
+        if (!hasPrev && pageManager.hasPrevPage()) {
             hasPrev = true;
             addChild(btnPrev);
-        }
-
-        if (hasPrev && !appModel.hasPrevPage()) {
+        } else if (hasPrev && !pageManager.hasPrevPage()) {
             hasPrev = false;
             removeChild(btnPrev);
         }
