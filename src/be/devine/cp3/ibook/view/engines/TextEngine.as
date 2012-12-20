@@ -31,7 +31,7 @@ public class TextEngine extends BasicTextEngine
     // refactored to use native textfields, so the appearance of text can be configured more precisely
     public function render(textContent:TextVO, index:uint):void
     {
-        renderStage.addChildAt(buildImage(textContent, "Helvetica", 15, 0x000000), index);
+        renderStage.addChildAt(buildImage(textContent, "Helvetica", 13, 0x000000), index);
     }
 }
 }
