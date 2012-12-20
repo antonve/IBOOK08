@@ -28,6 +28,7 @@ public class PageVOFactory
             }
             catch (e:FactoryError) {
                 trace ('failed loading element:', element);
+                return null;
             }
         }
 

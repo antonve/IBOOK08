@@ -54,7 +54,9 @@ public class PageService
             // use factory to build the PageVO's
             var pageVo:PageVO = PageVOFactory.createFromXML(page);
 
-            pages.push(pageVo);
+            if (pageVo !== null) {
+                pages.push(pageVo);
+            }
         }
 
         // exit application if there are no pages in the xml

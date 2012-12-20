@@ -7,7 +7,8 @@ import starling.text.TextField;
 import starling.utils.HAlign;
 import starling.utils.VAlign;
 
-public class TitleEngine {
+public class TitleEngine extends BasicTextEngine
+{
 
     // -- Properties -- //
 
@@ -22,15 +23,9 @@ public class TitleEngine {
 
     // -- Methods -- //
 
-    public function render(title:TitleVO, index:uint):void
+    public function render(textContent:TitleVO, index:uint):void
     {
-        var textField:TextField = new TextField(title.width, title.height, title.text, "Helvetica", 32, 0x000000);
-        textField.hAlign = HAlign.LEFT;
-        textField.vAlign = VAlign.TOP;
-        textField.x = title.x;
-        textField.y = title.y;
-
-        renderStage.addChildAt(textField, index);
+        renderStage.addChildAt(buildImage(textContent, "Helvetica", 32, 0x000000), index);
     }
 
 }

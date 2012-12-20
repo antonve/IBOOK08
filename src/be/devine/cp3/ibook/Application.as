@@ -35,6 +35,10 @@ public class Application extends Sprite {
         appModel = AppModel.getInstance();
         appModel.renderStage = this;
 
+        var world:Sprite = new Sprite();
+        world.name = 'world';
+        addChild(world);
+
         var pageService:PageService = new PageService();
         pageService.loadPagesXML("assets/data.xml");
 

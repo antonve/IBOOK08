@@ -21,6 +21,8 @@ import be.devine.cp3.ibook.vo.SolidVO;
 import be.devine.cp3.ibook.vo.TextVO;
 import be.devine.cp3.ibook.vo.TitleVO;
 
+import flash.events.Event;
+
 import starling.display.Sprite;
 
 public class PageManager
@@ -41,11 +43,13 @@ public class PageManager
         }
 
         appModel = AppModel.getInstance();
-        solidEngine = new SolidEngine(appModel.renderStage);
-        imageEngine = new ImageEngine(appModel.renderStage);
-        textEngine = new TextEngine(appModel.renderStage);
-        titleEngine = new TitleEngine(appModel.renderStage);
+        solidEngine = new SolidEngine(appModel.renderStage.getChildByName('world') as Sprite);
+        imageEngine = new ImageEngine(appModel.renderStage.getChildByName('world') as Sprite);
+        textEngine = new TextEngine(appModel.renderStage.getChildByName('world') as Sprite);
+        titleEngine = new TitleEngine(appModel.renderStage.getChildByName('world') as Sprite);
         _index = 0;
+
+        appModel.addEventListener(AppModel.SELECTED_PAGE_CHANGED, onSelectedPageChangedHandler);
     }
 
     public static function getInstance():PageManager
@@ -96,6 +100,14 @@ public class PageManager
                 case 'TitleVO': titleEngine.render(el as TitleVO, _index++); break;
             }
         }
+
+        _index = 0;
+    }
+
+    private function onSelectedPageChangedHandler(e:Event):void
+    {
+        (appModel.renderStage.getChildByName('world') as Sprite).removeChildren();
+        renderPage(appModel.selectedPageIndex);
     }
 }
 }

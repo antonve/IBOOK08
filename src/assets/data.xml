@@ -14,39 +14,9 @@
             </element>
         </page>
         <page>
-            <element type="title" pos="20,30">Test title</element>
+            <element type="title" pos="20,30" size="400,60">Test title</element>
             <element type="solid">
                 0xff00ff
-            </element>
-            <element type="img" size="100,100">
-                basketball.jpg
-            </element>
-        </page>
-        <page>
-            <element type="title" pos="20,30">Test title</element>
-            <element type="solid">
-                0xff00ff
-            </element>
-            <element type="img" size="100,100">
-                basketball.jpg
-            </element>
-        </page>
-        <page>
-            <element type="title" pos="20,30">Test title</element>
-            <element type="solid">
-                0xff00ff
-            </element>
-            <element type="img" size="100,100">
-                basketball.jpg
-            </element>
-        </page>
-        <page>
-            <element type="title" pos="20,30">Test title</element>
-            <element type="solid">
-                0xff00ff
-            </element>
-            <element type="img" size="100,100">
-                basketball.jpg
             </element>
         </page>
     </pages>
