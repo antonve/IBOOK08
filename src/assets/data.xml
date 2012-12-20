@@ -1,34 +1,101 @@
 <book>
-    <title>Development test data</title>
+    <title>IBOOK8</title>
+
     <pages>
+
         <page>
-            <element type="title" pos="200,230" size="400,60">Test title</element>
-            <element type="text" pos="200,300" size="400,200">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque risus et eros sagittis id tristique erat tristique. Vivamus leo ante, vestibulum vitae volutpat eu, gravida non eros. Proin turpis mi, aliquet a volutpat eget, ornare ut odio. Vestibulum viverra justo placerat nibh pulvinar in adipiscing justo placerat. Vivamus et libero tellus, quis dictum nulla. Donec ac felis mi, at pellentesque nunc. Cras nibh dui, auctor quis hendrerit a, laoreet vel leo. Aenean lobortis magna at massa scelerisque mollis. Phasellus vestibulum tortor ut leo convallis consectetur. Nunc sagittis mi ac nunc laoreet quis blandit lacus suscipit. Fusce id elit velit, malesuada fermentum ante. Curabitur laoreet, velit quis aliquet tincidunt, eros tortor blandit ligula, feugiat facilisis dolor purus scelerisque erat. Sed eleifend massa in erat vestibulum gravida. Nulla adipiscing purus tellus, ut egestas mauris. Aliquam quam mauris, eleifend et molestie non, consequat ut sapien. Nullam dictum diam sit amet eros ultrices sit amet facilisis purus auctor.
-
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse suscipit posuere nunc, vitae laoreet risus pharetra sed. Quisque magna quam, rutrum ac vehicula sed, tincidunt nec leo. Ut sit amet vestibulum sapien. Suspendisse a purus at dui tincidunt dapibus sit amet ut neque. Vestibulum sollicitudin varius ipsum non interdum. Nulla id urna libero, eu sollicitudin leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam id lectus ante, in lobortis neque. Quisque blandit sollicitudin enim.
-
-                Curabitur nulla odio, dapibus in placerat sollicitudin, pellentesque commodo risus. Curabitur at massa vel quam consequat vulputate. Proin scelerisque adipiscing imperdiet. Integer elit velit, lacinia eget rhoncus eu, condimentum blandit sapien. Nunc eu blandit erat. Morbi at diam turpis, eget sodales mi. Phasellus quam urna, lobortis a dictum quis, vulputate quis nunc. Aliquam vehicula tortor id orci elementum ac sodales diam tincidunt. Nunc id lorem sit amet tortor ornare aliquet ut vitae risus. Nunc sed dapibus sapien. Ut convallis lacus vitae velit rhoncus egestas. In sit amet massa sit amet diam vehicula dictum ut sit amet neque. Vestibulum sollicitudin porta imperdiet. Etiam ultrices eros eu nunc tristique interdum. Etiam sit amet dui in enim convallis euismod.
-
-                Ut eget lacus purus, sit amet pulvinar sapien. Curabitur ornare facilisis lacus et facilisis. Pellentesque id eros a eros placerat adipiscing. Suspendisse potenti. Donec at mauris sem. Sed quis mattis quam. Cras eget odio lorem, quis volutpat sem. Praesent luctus luctus leo nec faucibus. Suspendisse posuere, neque sed vestibulum vestibulum, tellus lacus hendrerit tellus, eget viverra est nisl non erat. Sed cursus blandit fermentum. Proin commodo volutpat aliquet.
-
-                Mauris volutpat nisl et odio tincidunt vel pharetra felis luctus. Proin placerat cursus fermentum. Suspendisse ut dictum erat. Sed aliquam sem ac lorem elementum eu pretium lacus iaculis. Integer tortor mi, varius non cursus eu, porttitor a nulla. Donec augue dui, elementum et mattis vel, placerat at nulla. Suspendisse at risus ligula, vitae venenatis metus. Nam imperdiet gravida velit, in sollicitudin felis hendrerit ac.
+            <element type="img" pos="30,20" size="756,2">
+                page1_topStroke.jpg
             </element>
-            <element type="img" size="964,394" pos="50,400">
-                test.jpg
+            <element type="img" pos="414,66" size="183,183">
+                page1_logo.png
+            </element>
+            <element type="img" pos="331,262" size="351,33">
+                page1_motto.jpg
+            </element>
+            <element type="text" pos="325,198" size="616,160">
+                Computer art is any art in which computers play a role in production or display of the artwork. Such art can be an image, sound, animation, video, CD-ROM, DVD-ROM, videogame, web site, algorithm, performance or gallery installation. Many traditional disciplines are now integrating digital technologies and, as a result, the lines between traditional works of art and new media works created using computers has been blurred. For instance, an artist may combine traditional painting with algorithm art and other digital techniques. As a result, defining computer art by its end product can thus be difficult.
+            </element>
+            <element type="img" pos="120,490" size="784,141">
+                page1_bottomStroke.jpg
+            </element>
+            <element type="img" pos="0,0" size="1024,667">
+                page1_background.jpg
             </element>
             <element type="solid" pos="0,0" size="1024,768">
-                0xff00ff
+                0xffffff
             </element>
         </page>
+
         <page>
-            <element type="title" pos="20,30">Test title</element>
-            <element type="solid">
-                0xff00ff
+            <element type="img" pos="30,25" size="183,183">
+                header_logo.png
             </element>
-            <element type="img" size="100,100">
-                basketball.jpg
+            <element type="img" pos="226,38" size="755,46">
+                header_motto.jpg
+            </element>
+            <element type="title" pos="238,138" size="400,60">
+                The designer Christmas gift guide, part six
+            </element>
+            <element type="text" pos="237,244" size="354,130">
+                Spiderpodium (£14.95)
+                The Spiderpodium is a proper gadget. It may look like a flash pipe cleaner but it's actually multi-function stand that bends and twists into a holder for virtually any handheld device. Now available in Christmas colours.
+            </element>
+            <element type="text" pos="237,410" size="354,175">
+                Vjay (£1.99 iPhone / £6.99 iPad)
+                Fancy yourself as the next DJ Yoda? Give Vjay a whirl. The app for iPhone and iPad created by Algoriddim, lets you to mix, scratch and mashup video footage. It also allows direct TV display, wireless streaming using Apple TV and you can record your performances live to share on social networks.
+            </element>
+            <element type="text" pos="624,244" size="354,180">
+                Harry Potter prints (From £49)
+                Harry Potter boffins and typography aficionados alike will be thrilled to find one of these in their stockings. Eduardo Lima and Miraphora Mina are the duo behind the graphic art on the – seemingly endless – film franchise, and they’ve unveiled some new limited edition, numbered, embossed and signature-stamped prints. Magic.
+            </element>
+            <element type="text" pos="624,454" size="354,160">
+                Mango bikes
+                You can customise virtually every aspect of a Mango bike: including frame size, handle bar type, saddle type, pedals, chains and the colour of all of those things. Order now and you'll get yours in time to have wheelie competitions on Christmas morning.
+            </element>
+            <element type="img" pos="30,244" size="182,107">
+                page2_img1.jpg
+            </element>
+            <element type="img" pos="30,355" size="183,183">
+                page2_img2.jpg
+            </element>
+            <element type="img" pos="30,546" size="183,76">
+                page2_img3.jpg
+            </element>
+            <element type="solid" pos="0,0" size="1024,768">
+                0xffffff
             </element>
         </page>
+
+        <page>
+            <element type="img" pos="30,25" size="183,183">
+                header_logo.png
+            </element>
+            <element type="img" pos="226,38" size="755,46">
+                header_motto.jpg
+            </element>
+            <element type="title" pos="226,138" size="400,60">
+                LBi celebrates award with Barley-esque video
+            </element>
+            <element type="text" pos="226,184" size="755,354">
+                Marketing Magazine's Digital Agency of the Year channels Nathan Barley in new video
+
+                The spirit of Nathan Barley lives on in a well futile new video from a London-based marketing and technology agency.
+
+                To celebrate winning the accolade of Marketing Magazine's Digital Agency of the Year, LBi has produced a tongue-in-cheek short film in which a trio of east London hipsters compare the relative merits of a customised mountain bike... and a unicorn.
+
+                The unicorn, LBi says, "symbolises the never-ending quest for digital mastery." The mountain bike, on the other hand, has a "little bell" that is "going off – ping, ping, you know what I mean, ping?!"
+
+                LBi saw off competition from AKQA, Jam, Glue Isobar and R/GA London to take the prize, after working with clients such as Dyson, Honda, The Guardian and Microsoft Internet Explorer in 2012.
+            </element>
+            <element type="img" pos="226,463" size="756,174">
+                page3_banner.jpg
+            </element>
+            <element type="solid" pos="0,0" size="1024,768">
+                0xffffff
+            </element>
+        </page>
+
     </pages>
+
 </book>

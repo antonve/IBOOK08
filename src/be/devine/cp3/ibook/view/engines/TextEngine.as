@@ -1,14 +1,19 @@
 package be.devine.cp3.ibook.view.engines {
 
-import be.devine.cp3.ibook.model.errors.EngineError;
 import be.devine.cp3.ibook.vo.TextVO;
 
-import starling.display.Sprite;
-import starling.text.TextField;
-import starling.utils.HAlign;
-import starling.utils.VAlign;
+import flash.display.BitmapData;
 
-public class TextEngine {
+import flash.text.TextField;
+import flash.text.TextFormat;
+
+import starling.display.Image;
+
+import starling.display.Sprite;
+import starling.textures.Texture;
+
+public class TextEngine extends BasicTextEngine
+{
 
     // -- Properties -- //
 
@@ -23,16 +28,10 @@ public class TextEngine {
 
     // -- Methods -- //
 
+    // refactored to use native textfields, so the appearance of text can be configured more precisely
     public function render(textContent:TextVO, index:uint):void
     {
-        var textField:TextField = new TextField(textContent.width, textContent.height, textContent.text, "Helvetica", 16, 0x000000);
-        textField.hAlign = HAlign.LEFT;
-        textField.vAlign = VAlign.TOP;
-        textField.x = textContent.x;
-        textField.y = textContent.y;
-
-        renderStage.addChildAt(textField, index);
+        renderStage.addChildAt(buildImage(textContent, "Helvetica", 16, 0x000000), index);
     }
-
 }
 }

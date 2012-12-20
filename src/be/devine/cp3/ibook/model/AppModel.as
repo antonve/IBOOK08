@@ -41,7 +41,7 @@ public class AppModel extends EventDispatcher {
         }
     }
 
-    public static function getInstance()
+    public static function getInstance():AppModel
     {
         if (instance == null) {
             instance = new AppModel(new Enforcer());
@@ -52,18 +52,6 @@ public class AppModel extends EventDispatcher {
 
 
     // -- Methods -- //
-
-    // Fabian (23/11) - Function Previous Page //
-    public function goToPreviousPage():void
-    {
-        trace('[AppModel] Go to previous page');
-    }
-
-    // Fabian (23/11) - Function Next Page //
-    public function goToNextPage():void
-    {
-        trace('[AppModel] Go to next page');
-    }
 
     // Anton 13/12 //
     public function getPageById(id:uint):PageVO
