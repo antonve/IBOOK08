@@ -15,10 +15,14 @@ import be.devine.cp3.ibook.view.components.buttons.OverviewButton;
 import be.devine.cp3.ibook.view.components.buttons.PrevButton;
 
 import flash.events.Event;
+import flash.ui.Keyboard;
+
+import starling.core.Starling;
 
 import starling.display.Quad;
 import starling.display.Sprite;
 import starling.events.Event;
+import starling.events.KeyboardEvent;
 
 public class UI extends Sprite
 {
@@ -41,7 +45,7 @@ public class UI extends Sprite
 
 
         // overview button
-        renderBtnOverview();
+        //renderBtnOverview();
 
         // next/prev button
         renderBtnNext();
@@ -53,16 +57,17 @@ public class UI extends Sprite
         }
 
         appModel.addEventListener(AppModel.SELECTED_PAGE_CHANGED, appModel_selectedPageChangedHandler);
+        Starling.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDownHandler);
     }
 
-    private function renderBtnOverview():void
-    {
-        var btnOverview:OverviewButton = new OverviewButton();
-        btnOverview.x = (appModel.renderStage.width) / 2; //447
-        btnOverview.y = (appModel.renderStage.height - 50); //697
-        btnOverview.addEventListener(MainButton.CLICKED, btnOverview_clickedHandler);
-        addChild(btnOverview);
-    }
+    //private function renderBtnOverview():void
+    //{
+    //    var btnOverview:OverviewButton = new OverviewButton();
+    //    btnOverview.x = (appModel.renderStage.width) / 2; //447
+    //    btnOverview.y = (appModel.renderStage.height - 50); //697
+    //    btnOverview.addEventListener(MainButton.CLICKED, btnOverview_clickedHandler);
+    //    addChild(btnOverview);
+    //}
 
     private function renderBtnNext():void
     {
@@ -90,10 +95,10 @@ public class UI extends Sprite
         addChild(q);
     }
 
-    private function btnOverview_clickedHandler(event:starling.events.Event):void
-    {
-        trace('overview CLICKED');
-    }
+    //private function btnOverview_clickedHandler(event:starling.events.Event):void
+    //{
+    //    trace('overview CLICKED');
+    //}
 
     private function btnNext_clickedHandler(event:starling.events.Event):void
     {
@@ -124,6 +129,25 @@ public class UI extends Sprite
             hasPrev = false;
             removeChild(btnPrev);
         }
+    }
+
+    private function keyDownHandler(e:KeyboardEvent):void
+    {
+        Starling.current.stage.removeEventListener(KeyboardEvent.KEY_DOWN, keyDownHandler);
+        Starling.current.stage.addEventListener(KeyboardEvent.KEY_UP, keyUpHandler);
+        if (e.keyCode == Keyboard.RIGHT) {
+            pageManager.goToNextPage();
+        }
+        if (e.keyCode == Keyboard.LEFT) {
+            pageManager.goToPreviousPage();
+        }
+    }
+
+    private function keyUpHandler(e:KeyboardEvent):void
+    {
+        Starling.current.stage.removeEventListener(KeyboardEvent.KEY_UP, keyUpHandler);
+        Starling.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDownHandler);
+
     }
 }
 }

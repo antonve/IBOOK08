@@ -50,7 +50,6 @@ public class ImageEngine
         var dummy:Sprite = new Sprite();
         dummy.name = 'dummy' + index;
         renderStage.addChildAt(dummy, index);
-        trace('kankr');
 
         task.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, IOErrorHandler)
         task.addEventListener(Event.COMPLETE, completeHandler);
@@ -87,8 +86,6 @@ public class ImageEngine
         renderStage.addChild(finalImg);
         renderStage.swapChildren(dummy,finalImg);
         renderStage.removeChild(dummy, true);
-
-        trace('kukuku');
     }
 }
 }
