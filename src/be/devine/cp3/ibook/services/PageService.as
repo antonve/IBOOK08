@@ -46,7 +46,7 @@ public class PageService
     private function xmlCompleteHandler(event:Event):void
     {
         // init
-        var pagesXML = new XML(event.target.data);
+        var pagesXML:XML = new XML(event.target.data);
         var pages:Vector.<PageVO> = new Vector.<PageVO>();
 
         // loop pages
