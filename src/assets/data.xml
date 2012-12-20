@@ -1,23 +1,32 @@
 <book>
-    <title>Development test data</title>
+    <title>IBOOK8</title>
+
     <pages>
+
         <page>
-            <element type="title" pos="30,20" size="400,60">Test title</element>
-            <element type="text" pos="30,70" size="964,200">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque risus et eros sagittis id tristique erat tristique. Vivamus leo ante, vestibulum vitae volutpat eu, gravida non eros. Proin turpis mi, aliquet a volutpat eget, ornare ut odio. Vestibulum viverra justo placerat nibh pulvinar in adipiscing justo placerat. Vivamus et libero tellus. Sed eleifend massa in erat vestibulum gravida. Nulla adipiscing purus tellus, ut egestas mauris. Aliquam quam mauris, eleifend et molestie non, consequat ut sapien. Nullam dictum diam sit amet eros ultrices sit amet facilisis purus auctor.
+            <element type="img" pos="30,20" size="756,2">
+                page1_topStroke.jpg
             </element>
-            <element type="img" size="964,394" pos="30,244">
-                test.jpg
+            <element type="img" pos="414,66" size="183,183">
+                page1_logo.png
+            </element>
+            <element type="img" pos="331,262" size="351,33">
+                page1_motto.jpg
+            </element>
+            <element type="text" pos="325,198" size="616,160">
+                Computer art is any art in which computers play a role in production or display of the artwork. Such art can be an image, sound, animation, video, CD-ROM, DVD-ROM, videogame, web site, algorithm, performance or gallery installation. Many traditional disciplines are now integrating digital technologies and, as a result, the lines between traditional works of art and new media works created using computers has been blurred. For instance, an artist may combine traditional painting with algorithm art and other digital techniques. As a result, defining computer art by its end product can thus be difficult.
+            </element>
+            <element type="img" pos="120,490" size="784,141">
+                page1_bottomStroke.jpg
+            </element>
+            <element type="img" pos="0,0" size="1024,667">
+                page1_background.jpg
             </element>
             <element type="solid" pos="0,0" size="1024,768">
                 0xffffff
             </element>
         </page>
-        <page>
-            <element type="title" pos="20,30" size="400,60">Test title</element>
-            <element type="solid">
-                0xff00ff
-            </element>
-        </page>
+
     </pages>
+
 </book>
