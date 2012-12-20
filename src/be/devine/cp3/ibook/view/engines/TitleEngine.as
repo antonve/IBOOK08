@@ -24,7 +24,7 @@ public class TitleEngine {
 
     public function render(title:TitleVO, index:uint):void
     {
-        var textField = new TextField(title.width, title.height, title.text, "Helvetica", 32, 0x000000);
+        var textField:TextField = new TextField(title.width, title.height, title.text, "Helvetica", 32, 0x000000);
         textField.hAlign = HAlign.LEFT;
         textField.vAlign = VAlign.TOP;
         textField.x = title.x;

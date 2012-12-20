@@ -41,7 +41,7 @@ public class AppModel extends EventDispatcher {
         }
     }
 
-    public static function getInstance()
+    public static function getInstance():AppModel
     {
         if (instance == null) {
             instance = new AppModel(new Enforcer());

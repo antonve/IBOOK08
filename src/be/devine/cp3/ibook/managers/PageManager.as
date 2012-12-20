@@ -48,7 +48,7 @@ public class PageManager
         _index = 0;
     }
 
-    public static function getInstance()
+    public static function getInstance():PageManager
     {
         if (instance == null) {
             instance = new PageManager(new Enforcer());
