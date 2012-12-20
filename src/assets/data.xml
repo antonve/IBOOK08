@@ -4,7 +4,7 @@
     <pages>
 
         <page>
-            <element type="img" pos="30,20" size="756,2">
+            <element type="img" pos="126,39" size="756,2">
                 page1_topStroke.jpg
             </element>
             <element type="img" pos="414,66" size="183,183">
@@ -13,8 +13,8 @@
             <element type="img" pos="331,262" size="351,33">
                 page1_motto.jpg
             </element>
-            <element type="text" pos="325,198" size="616,160">
-                Computer art is any art in which computers play a role in production or display of the artwork. Such art can be an image, sound, animation, video, CD-ROM, DVD-ROM, videogame, web site, algorithm, performance or gallery installation. Many traditional disciplines are now integrating digital technologies and, as a result, the lines between traditional works of art and new media works created using computers has been blurred. For instance, an artist may combine traditional painting with algorithm art and other digital techniques. As a result, defining computer art by its end product can thus be difficult.
+            <element type="text" pos="198,325" size="616,160">
+Computer art is any art in which computers play a role in production or display of the artwork. Such art can be an image, sound, animation, video, CD-ROM, DVD-ROM, videogame, web site, algorithm, performance or gallery installation. Many traditional disciplines are now integrating digital technologies and, as a result, the lines between traditional works of art and new media works created using computers has been blurred. For instance, an artist may combine traditional painting with algorithm art and other digital techniques. As a result, defining computer art by its end product can thus be difficult.
             </element>
             <element type="img" pos="120,490" size="784,141">
                 page1_bottomStroke.jpg
@@ -29,7 +29,7 @@
 
         <page>
             <element type="img" pos="30,25" size="183,183">
-                header_logo.png
+                header_logo.jpg
             </element>
             <element type="img" pos="226,38" size="755,46">
                 header_motto.jpg
@@ -39,19 +39,19 @@
             </element>
             <element type="text" pos="237,244" size="354,130">
                 Spiderpodium (£14.95)
-                The Spiderpodium is a proper gadget. It may look like a flash pipe cleaner but it's actually multi-function stand that bends and twists into a holder for virtually any handheld device. Now available in Christmas colours.
+The Spiderpodium is a proper gadget. It may look like a flash pipe cleaner but it's actually multi-function stand that bends and twists into a holder for virtually any handheld device. Now available in Christmas colours.
             </element>
             <element type="text" pos="237,410" size="354,175">
                 Vjay (£1.99 iPhone / £6.99 iPad)
-                Fancy yourself as the next DJ Yoda? Give Vjay a whirl. The app for iPhone and iPad created by Algoriddim, lets you to mix, scratch and mashup video footage. It also allows direct TV display, wireless streaming using Apple TV and you can record your performances live to share on social networks.
+Fancy yourself as the next DJ Yoda? Give Vjay a whirl. The app for iPhone and iPad created by Algoriddim, lets you to mix, scratch and mashup video footage. It also allows direct TV display, wireless streaming using Apple TV and you can record your performances live to share on social networks.
             </element>
             <element type="text" pos="624,244" size="354,180">
                 Harry Potter prints (From £49)
-                Harry Potter boffins and typography aficionados alike will be thrilled to find one of these in their stockings. Eduardo Lima and Miraphora Mina are the duo behind the graphic art on the – seemingly endless – film franchise, and they’ve unveiled some new limited edition, numbered, embossed and signature-stamped prints. Magic.
+Harry Potter boffins and typography aficionados alike will be thrilled to find one of these in their stockings. Eduardo Lima and Miraphora Mina are the duo behind the graphic art on the – seemingly endless – film franchise, and they’ve unveiled some new limited edition, numbered, embossed and signature-stamped prints. Magic.
             </element>
             <element type="text" pos="624,454" size="354,160">
                 Mango bikes
-                You can customise virtually every aspect of a Mango bike: including frame size, handle bar type, saddle type, pedals, chains and the colour of all of those things. Order now and you'll get yours in time to have wheelie competitions on Christmas morning.
+You can customise virtually every aspect of a Mango bike: including frame size, handle bar type, saddle type, pedals, chains and the colour of all of those things. Order now and you'll get yours in time to have wheelie competitions on Christmas morning.
             </element>
             <element type="img" pos="30,244" size="182,107">
                 page2_img1.jpg
@@ -69,27 +69,205 @@
 
         <page>
             <element type="img" pos="30,25" size="183,183">
-                header_logo.png
+                header_logo.jpg
             </element>
             <element type="img" pos="226,38" size="755,46">
                 header_motto.jpg
             </element>
-            <element type="title" pos="226,138" size="400,60">
+            <element type="title" pos="226,115" size="400,60">
                 LBi celebrates award with Barley-esque video
             </element>
             <element type="text" pos="226,184" size="755,354">
                 Marketing Magazine's Digital Agency of the Year channels Nathan Barley in new video
 
-                The spirit of Nathan Barley lives on in a well futile new video from a London-based marketing and technology agency.
-
-                To celebrate winning the accolade of Marketing Magazine's Digital Agency of the Year, LBi has produced a tongue-in-cheek short film in which a trio of east London hipsters compare the relative merits of a customised mountain bike... and a unicorn.
-
-                The unicorn, LBi says, "symbolises the never-ending quest for digital mastery." The mountain bike, on the other hand, has a "little bell" that is "going off – ping, ping, you know what I mean, ping?!"
-
-                LBi saw off competition from AKQA, Jam, Glue Isobar and R/GA London to take the prize, after working with clients such as Dyson, Honda, The Guardian and Microsoft Internet Explorer in 2012.
+The spirit of Nathan Barley lives on in a well futile new video from a London-based marketing and technology agency.
+To celebrate winning the accolade of Marketing Magazine's Digital Agency of the Year, LBi has produced a tongue-in-cheek short film in which a trio of east London hipsters compare the relative merits of a customised mountain bike... and a unicorn.
+The unicorn, LBi says, "symbolises the never-ending quest for digital mastery." The mountain bike, on the other hand, has a "little bell" that is "going off – ping, ping, you know what I mean, ping?!"
+LBi saw off competition from AKQA, Jam, Glue Isobar and R/GA London to take the prize, after working with clients such as Dyson, Honda, The Guardian and Microsoft Internet Explorer in 2012.
             </element>
             <element type="img" pos="226,463" size="756,174">
                 page3_banner.jpg
+            </element>
+            <element type="solid" pos="0,0" size="1024,768">
+                0xffffff
+            </element>
+        </page>
+
+        <page>
+            <element type="img" pos="0,0" size="1024,668">
+                page4_background.jpg
+            </element>
+            <element type="solid" pos="0,0" size="1024,768">
+                0xffffff
+            </element>
+        </page>
+
+        <page>
+            <element type="img" pos="30,25" size="183,183">
+                header_logo.jpg
+            </element>
+            <element type="img" pos="226,38" size="755,46">
+                header_motto.jpg
+            </element>
+            <element type="title" pos="226,145" size="400,60">
+                The art of tea with Peskimo
+            </element>
+            <element type="text" pos="226,246" size="755,400">
+                Known for their digital illustrations, recent years have seen Peskimo moving into screenprinting as respite from sitting in front of the computer screen. The images for this series were sketched out on paper, developed as roughs in Illustrator, and then separated for printing on the screen rack.
+
+"We started with Oolong and created maybe ten versions, in widely different set-ups. Once we are happy with a composition, we split it into its separations and play about with colours. For these prints, we wanted them to all work with a similar palette, so it was tough to pick six colours that work in different arrangements. No two prints feature the same colour arrangement," says David.
+
+Each print devoted to an individual type of tea is printed with four of the final six colours chosen, and Fabriano paper has been used for a vibrant. There's a fifth image too, showing all four boxes of tea, and it's been created using all six colours. A limited run of 80 has been made of each one, and prints are selling between £60 and £140.
+
+In future, they will be doing more screen printing, with a new set of themes - human characters from around the world, or something nature-inspired, perhaps.
+            </element>
+            <element type="img" pos="30,305" size="513,342">
+                page5_bgImg.jpg
+            </element>
+            <element type="solid" pos="0,0" size="1024,768">
+                0xffffff
+            </element>
+        </page>
+
+        <page>
+            <element type="img" pos="45,32" size="455,600">
+                page6_img1.jpg
+            </element>
+            <element type="img" pos="525,178" size="459,334">
+                page6_img2.jpg
+            </element>
+            <element type="solid" pos="0,0" size="1024,768">
+                0xffffff
+            </element>
+        </page>
+
+        <page>
+            <element type="img" pos="30,25" size="183,183">
+                header_logo.jpg
+            </element>
+            <element type="img" pos="226,38" size="755,46">
+                header_motto.jpg
+            </element>
+            <element type="title" pos="226,145" size="460,60">
+                The art of winning awards 1/5
+            </element>
+            <element type="text" pos="30,239" size="455,410">
+                Leading art directors and illustrators discuss their award-winning collaborations, and share the secrets of their success
+From writing a watertight brief to nailing the perfect colour palette, creating an project with award-winning potential requires great performance from all sides of the table – a process that begins, of course, with hiring the right creative for the job in the first place. “When I look for illustrators, I want them to be passionate about their work,” explains freelance art director Vince Lim, who worked on the 7up Winter Wonderland campaign – which picked up a silver medal at the Association of Illustrators’ Images show – while at Irish International BBDO/Proximity. He adds: “I’m hiring them because of their style, and their viewpoint.”
+And whether you’re an illustrator-for-hire or an art director in need of someone to commission, it’s important to recognise that style means more than just an illustrator’s technique and draughtsmanship, as illustrator Steve Simpson, who worked with Lim on the Winter Wonderland project, points out: “It also relates to how you go about problem-solving,” he says.
+            </element>
+            <element type="text" pos="527,239" size="455,410">
+                 “Interpreting a brief and thumbnailing an idea has very little to do with visual style, yet in those few scribbly marks lies the foundation of the final piece.”
+Of course, commissioners do pay attention to a creative’s established visual voice when considering them for a brief. And understanding the process behind this decision – and just what it was that shouted loudly enough – can act as more than simply an aid to getting future work: it can also prove useful in building up a picture of the client’s expectations. “I always ask which pieces from my portfolio made them think I was the right person for a particular job,” Simpson says.
+Once the right illustrator is in place, a good brief is absolutely central to the entire project – and if the commission is muddled or inaccurate, it’s probably not ready to be seen by the illustrator. “I need a clear brief, which could be one sentence,” reflects illustrator Noma Bar, whose run of 10 new cover designs for the novels of American writer Don DeLillo recently picked up a D&AD Yellow Pencil.
+            </element>
+            <element type="img" pos="325,256" size="615,380">
+                page7_bgImg.jpg
+            </element>
+            <element type="solid" pos="0,0" size="1024,768">
+                0xffffff
+            </element>
+        </page>
+
+        <page>
+            <element type="img" pos="30,25" size="183,183">
+                header_logo.jpg
+            </element>
+            <element type="img" pos="226,38" size="755,46">
+                header_motto.jpg
+            </element>
+            <element type="title" pos="226,145" size="460,60">
+                The art of winning awards 2/5
+            </element>
+            <element type="text" pos="30,239" size="455,410">
+                 “It could be a long story, but a lot of the time that’s not going to be clear,” he continues. “Two words can be enough, and one word can change the whole brief.”
+A good brief doesn’t need to be too prescriptive. It should simply be clear about what needs to be achieved. “It’s important that it isn’t so much tight as well-formed,” says Alex Bec, co-director of INT Works, who art-directed the new Don DeLillo covers for Picador. “There needs to have been enough thought internally before we go to an illustrator.”
+“I’ll start with what I have,” says Bar of the process of interpreting a new brief. “If after four or five hours I see that I’m not getting anywhere, which doesn’t happen often, I’ll call and ask for a conversation or a meeting to get some input.”
+Netherlands-based freelance artist Eric van den Boom came third in the Electronic/Music category at the Dieline Package Design Awards with his artwork and packaging for the DrNo Effects guitar pedals range.
+            </element>
+            <element type="text" pos="527,239" size="455,410">
+                 He advises asking plenty of questions at the time of being briefed, and says it’s vital to debrief the client afterwards. “Sometimes you may think you understand the client but, by asking questions, you discover if they mean something different. It’s important to debrief and ensure you understood everything correctly.”
+“The toughest thing to cope with when getting a brief, or feedback, is that the people writing them often don’t talk or think about the work in the way you do,” says Jason Groves of collective Shynola, who illustrated the artwork for folk singer/songwriter and guitarist Laura Marling’s A Creature I Don’t Know box set, which was another D&AD Yellow Pencil winner. “That’s fine, but problems arise when you second-guess what a client’s vague comment really means. It wasn’t vague to them – there’s just a disconnect in language.”
+The presence of an art director can ease that process, especially if multiple stakeholders are involved on the client side.
+            </element>
+            <element type="solid" pos="0,0" size="1024,768">
+                0xffffff
+            </element>
+        </page>
+
+        <page>
+            <element type="img" pos="30,25" size="183,183">
+                header_logo.jpg
+            </element>
+            <element type="img" pos="226,38" size="755,46">
+                header_motto.jpg
+            </element>
+            <element type="title" pos="226,145" size="460,60">
+                The art of winning awards 3/5
+            </element>
+            <element type="text" pos="30,239" size="455,410">
+                  “It can be my job to keep the illustrator out of that,” says Vince Lim, who says he avoids letting illustrators speak to, or be contacted by, multiple points of contact. “Everyone needs to leave the illustrator alone and come to me or there’s no cohesion,” he explains. “I’m the project manager. Nobody else should be contacting the illustrator.”
+That said, illustrators can’t really expect to be shielded from the process of approval by committee. “It always helps when they understand the process and don’t let it get to them when it becomes a bit stressful,” says Alex Cowper, senior art director at EMI, who commissioned Shynola to illustrate the Laura Marling box set. “There are so many people and factors involved in any campaign, and it’s effectively my job as the art director to take all those opinions and requirements and communicate them back to the illustrator,” he explains.
+            </element>
+            <element type="text" pos="527,239" size="455,410">
+                 “It’s always great when you work with someone who understands this and works through it with you, as opposed to pushing against it,” Cowper continues. “And it’s also my job to ensure the illustrator feels involved in the process and is producing a piece of work they’re also happy with.”
+Then there are the projects that don’t follow the traditional client/art director/illustrator hierarchy. “We’re in a partnership with a winery, so we’ve done away with clients,” says Kevin Shaw, owner of branding and packaging design company Stranger & Stranger, which specialises in alcoholic drinks. “We’ll come up with a design or an idea aimed at a particular retailer or demographic, then we’ll help sell the design into retailers and get paid a commission on case sales,” he explains. “We benefit from being very specialist, within a small market.”
+Stranger & Stranger knows what sells, and has a proven track record. “So everyone trusts us and leaves the design to us,” says Shaw.
+            </element>
+            <element type="img" pos="455,180" size="503,475">
+                page9_bgImg.jpg
+            </element>
+            <element type="solid" pos="0,0" size="1024,768">
+                0xffffff
+            </element>
+        </page>
+
+        <page>
+            <element type="img" pos="30,25" size="183,183">
+                header_logo.jpg
+            </element>
+            <element type="img" pos="226,38" size="755,46">
+                header_motto.jpg
+            </element>
+            <element type="title" pos="226,145" size="460,60">
+                The art of winning awards 4/5
+            </element>
+            <element type="text" pos="30,239" size="455,410">
+                  The firm’s creations include Dearly Beloved wine, which has now sold out. The packaging features a silkscreened label inspired by Mexican folk art and came second in the Wine/Champagne category of the Dieline awards. “With a name like ‘Dearly Beloved’, you have to stay well clear of wedding visuals,” explains Shaw. “The darker side of the marriage vow is ‘til death do us part,’ but that sounded grim on the front, so I alluded to that in a more organic visual.”
+Aron Vellekoop León created his ‘Inner Apes’ poster for the Open Call Poster Project at the Graphic Design Festival Breda 2012. “The main theme was a statement by biologist Frans de Waal,” recalls the graphic designer and illustrator. “‘Greed is out, empathy is in.’ The brief was not to make a literal translation of this statement, but to regard your poster as an autonomous work in which you show what effect the statement has on you.”
+The jury unanimously agreed on Vellekoop León’s poster, according to its final report.
+            </element>
+            <element type="text" pos="527,239" size="455,410">
+                 He found a key source of inspiration in Frans de Waal’s book Our Inner Ape. 
+“It explains how apes evince the best and worst of human behaviour,” says Vellekoop León. “I ended up visualising my interpretation of the best and worst as two mechanisms that live in constant conflict.”
+For Shynola’s Jason Groves, getting illustration right means keeping to a set of artistic rules of thumb. “Work hard, don’t cut corners, never repeat yourself and, most importantly for us, do interesting, challenging work but make sure, at least on some level, that your mum could enjoy it too.”
+“A creative voice is something we struggle with,” he continues. “We can’t be objective about it. Each piece of work we do, we try to do something different – different illustration styles, different types of animation, different storytelling. None of our videos look like they were created by the same person.”
+            </element>
+            <element type="solid" pos="0,0" size="1024,768">
+                0xffffff
+            </element>
+        </page>
+
+        <page>
+            <element type="img" pos="30,25" size="183,183">
+                header_logo.jpg
+            </element>
+            <element type="img" pos="226,38" size="755,46">
+                header_motto.jpg
+            </element>
+            <element type="title" pos="226,145" size="460,60">
+                The art of winning awards 5/5
+            </element>
+            <element type="text" pos="30,239" size="455,410">
+                  The firm’s creations include Dearly Beloved wine, which has now sold out. The packaging features a silkscreened label inspired by Mexican folk art and came second in the Wine/Champagne category of the Dieline awards. “With a name like ‘Dearly Beloved’, you have to stay well clear of wedding visuals,” explains Shaw. “The darker side of the marriage vow is ‘til death do us part,’ but that sounded grim on the front, so I alluded to that in a more organic visual.”
+Aron Vellekoop León created his ‘Inner Apes’ poster for the Open Call Poster Project at the Graphic Design Festival Breda 2012. “The main theme was a statement by biologist Frans de Waal,” recalls the graphic designer and illustrator. “‘Greed is out, empathy is in.’ The brief was not to make a literal translation of this statement, but to regard your poster as an autonomous work in which you show what effect the statement has on you.”
+The jury unanimously agreed on Vellekoop León’s poster, according to its final report.
+            </element>
+            <element type="img" pos="527,257" size="223,330">
+                page11_img1.jpg
+            </element>            
+            <element type="img" pos="763,257" size="218,330">
+                page11_img2.jpg
             </element>
             <element type="solid" pos="0,0" size="1024,768">
                 0xffffff
