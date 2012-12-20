@@ -15,7 +15,7 @@ import flash.utils.getDefinitionByName;
 import net.hires.debug.Stats;
 
 import starling.core.Starling;
-[SWF (frameRate="60")]
+[SWF (width='1024',height='768',frameRate="60")]
 public class Main extends MovieClip {
 
     // -- Properties -- //
@@ -25,23 +25,22 @@ public class Main extends MovieClip {
 
     public function Main()
     {
-        trace('[Main] CONSTRUCT');
+        trace('[Main] App init');
 
         stage.align = StageAlign.TOP_LEFT;
         stage.scaleMode = StageScaleMode.NO_SCALE;
 
         // Size of application:
-        stage.nativeWindow.bounds = new Rectangle(
-                Screen.mainScreen.bounds.width - 1024 / 2,
-                Screen.mainScreen.bounds.height - 768 / 2,
-                1024,
-                768
-        );
+        stage.nativeWindow.x = (Screen.mainScreen.bounds.width - stage.nativeWindow.width) / 2;
+        stage.nativeWindow.y = (Screen.mainScreen.bounds.height - stage.nativeWindow.height) / 2;
 
         _starling = new Starling(Application, stage);
         _starling.start();
 
-        addChild(new Stats());
+        var stats:Stats = new Stats();
+        addChild(stats);
+        stats.x = stage.stageWidth - (stats.width);
+        stats.y = stage.stageHeight - (stats.height);
     }
 
     // -- Methods -- //

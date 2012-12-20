@@ -21,6 +21,10 @@ import be.devine.cp3.ibook.vo.SolidVO;
 import be.devine.cp3.ibook.vo.TextVO;
 import be.devine.cp3.ibook.vo.TitleVO;
 
+import flash.errors.IOError;
+
+import flash.events.Event;
+
 import starling.display.Sprite;
 
 public class PageManager
@@ -41,20 +45,46 @@ public class PageManager
         }
 
         appModel = AppModel.getInstance();
-        solidEngine = new SolidEngine(appModel.renderStage);
-        imageEngine = new ImageEngine(appModel.renderStage);
-        textEngine = new TextEngine(appModel.renderStage);
-        titleEngine = new TitleEngine(appModel.renderStage);
+        solidEngine = new SolidEngine(appModel.renderStage.getChildByName('world') as Sprite);
+        imageEngine = new ImageEngine(appModel.renderStage.getChildByName('world') as Sprite);
+        textEngine = new TextEngine(appModel.renderStage.getChildByName('world') as Sprite);
+        titleEngine = new TitleEngine(appModel.renderStage.getChildByName('world') as Sprite);
         _index = 0;
+
+        appModel.addEventListener(AppModel.SELECTED_PAGE_CHANGED, onSelectedPageChangedHandler);
     }
 
-    public static function getInstance()
+    public static function getInstance():PageManager
     {
         if (instance == null) {
             instance = new PageManager(new Enforcer());
         }
 
         return instance;
+    }
+
+    public function goToPreviousPage():void
+    {
+        if (hasPrevPage()) {
+            appModel.selectedPageIndex--;
+        }
+    }
+
+    public function goToNextPage():void
+    {
+        if (hasNextPage()) {
+            appModel.selectedPageIndex++;
+        }
+    }
+
+    public function hasNextPage():Boolean
+    {
+        return appModel.selectedPageIndex < appModel.pages.length-1;
+    }
+
+    public function hasPrevPage():Boolean
+    {
+        return appModel.selectedPageIndex !== 0;
     }
 
     public function renderPage(id:uint):void
@@ -67,11 +97,21 @@ public class PageManager
             // get classname and choose render engine depending on the type
             switch (getQualifiedClassName(el).split('::').pop()) {
                 case 'SolidVO': solidEngine.render(el as SolidVO, _index++); break;
-                case 'ImageVO': imageEngine.render(el as ImageVO, _index); break;
+                case 'ImageVO': imageEngine.render(el as ImageVO, _index++); break;
                 case 'TextVO': textEngine.render(el as TextVO, _index++); break;
                 case 'TitleVO': titleEngine.render(el as TitleVO, _index++); break;
             }
         }
+
+        appModel.queue.start();
+
+        _index = 0;
+    }
+
+    private function onSelectedPageChangedHandler(e:Event):void
+    {
+        (appModel.renderStage.getChildByName('world') as Sprite).removeChildren();
+        renderPage(appModel.selectedPageIndex);
     }
 }
 }

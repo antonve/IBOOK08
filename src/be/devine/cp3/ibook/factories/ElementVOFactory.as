@@ -14,6 +14,8 @@ import be.devine.cp3.ibook.vo.SolidVO;
 import be.devine.cp3.ibook.vo.TextVO;
 import be.devine.cp3.ibook.vo.TitleVO;
 
+import flash.filesystem.File;
+
 import flash.utils.getDefinitionByName;
 
 public class ElementVOFactory
@@ -46,6 +48,19 @@ public class ElementVOFactory
         var solidVO:SolidVO;
         var textVO:TextVO;
         var titleVO:TitleVO;
+
+        switch (type) {
+            case 'solid':
+                if (isNaN(Number(el))) {
+                    throw new FactoryError('Invalid data suplied for ' + el + ' for type ' + type + '.');
+                }
+            break;
+            case 'img':
+                if (!new File(el).exists) {
+                    throw new FactoryError('Invalid data suplied for ' + el + ' for type ' + type + '.');
+                }
+            break;
+        }
 
         // create VO
         var coords:Array = parsePoint(el.@pos);

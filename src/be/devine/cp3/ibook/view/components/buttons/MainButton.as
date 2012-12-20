@@ -7,7 +7,6 @@
  */
 package be.devine.cp3.ibook.view.components.buttons
 {
-import be.devine.cp3.ibook.Style;
 import be.devine.cp3.ibook.model.AppModel;
 
 import cp3.requestQueue.ImageTask;
@@ -21,13 +20,11 @@ import flash.events.Event;
 import starling.display.DisplayObject;
 import starling.display.Image;
 
-import starling.display.Quad;
 import starling.display.Sprite;
+import starling.events.Event;
 import starling.events.TouchEvent;
 import starling.events.TouchPhase;
 import starling.textures.Texture;
-import starling.utils.HAlign;
-import starling.utils.VAlign;
 
 public class MainButton extends Sprite
 {
@@ -35,6 +32,8 @@ public class MainButton extends Sprite
     private var _hoverImg:Image;
     private var _isHover:Boolean;
     private var _isReady:Boolean;
+
+    public static const CLICKED:String = "clicked";
 
     public function MainButton(imgPath:String, imgHoverPath:String)
     {
@@ -45,8 +44,8 @@ public class MainButton extends Sprite
         var imgTask:ImageTask = new ImageTask('assets/buttons/' + imgPath);
         var imgHoverTask:ImageTask = new ImageTask('assets/buttons/' + imgHoverPath);
 
-        imgTask.addEventListener(Event.COMPLETE, imgTask_completeHandler)
-        imgHoverTask.addEventListener(Event.COMPLETE, imgHoverTask_completeHandler)
+        imgTask.addEventListener(flash.events.Event.COMPLETE, imgTask_completeHandler)
+        imgHoverTask.addEventListener(flash.events.Event.COMPLETE, imgHoverTask_completeHandler)
 
         queue.add(imgTask);
         queue.add(imgHoverTask);
@@ -66,17 +65,23 @@ public class MainButton extends Sprite
         if (ev.getTouch(ev.target as DisplayObject, TouchPhase.HOVER)) {
             removeChild(_img);
             addChild(_hoverImg);
+            useHandCursor = true;
         }
         if (ev.getTouch(ev.target as DisplayObject) == null) {
             removeChild(_hoverImg);
             addChild(_img);
+            useHandCursor = false;
+        }
+
+        if (ev.getTouch(ev.target as DisplayObject, TouchPhase.ENDED)) {
+            dispatchEvent(new starling.events.Event(CLICKED));
         }
     }
 
-    private function imgTask_completeHandler(event:Event):void
+    private function imgTask_completeHandler(event:flash.events.Event):void
     {
         // get image from the event
-        var img:ImageTask = event.target.image as ImageTask;
+        var img:ImageTask = event.target as ImageTask;
 
         _img = createImage(img);
 
@@ -86,15 +91,14 @@ public class MainButton extends Sprite
         }
     }
 
-    private function imgHoverTask_completeHandler(event:Event):void
+    private function imgHoverTask_completeHandler(event:flash.events.Event):void
     {
         // get image from the event
-        var img:ImageTask = event.target.image as ImageTask;
+        var img:ImageTask = event.target as ImageTask;
 
         _hoverImg = createImage(img);
 
         if (_img !== null) {
-            trace('add');
             _isReady = true;
             addChild(_img);
         }
@@ -108,7 +112,11 @@ public class MainButton extends Sprite
 
         // create starling image
         var texture:Texture = Texture.fromBitmapData(bd);
-        return new Image(texture);
+        var image:Image = new Image(texture);
+        image.x = -1 * (image.width / 2);
+        image.y = -1 * (image.height / 2);
+
+        return image;
     }
 }
 }
